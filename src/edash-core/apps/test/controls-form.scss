@@ -1,0 +1,21 @@
+
+.controls-form-test {
+
+    .cf-line {
+        display: table;
+        
+        .cf-box {
+            display: table-cell;
+            padding: 1em;
+
+            .cf-caption {
+                font-weight: bold;
+            }
+
+            .cf-control {
+
+            }
+        }
+    }
+
+}

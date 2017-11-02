@@ -1,0 +1,73 @@
+.alerts {
+    .menu-bar {
+        text-align: right;
+        padding-top: 0.3em;
+        padding-right: 0.5em;
+    }
+
+    .ico-active {
+        color: $b-green1;
+        vertical-align: middle;
+    }
+
+    .ico-inactive {
+        color: $b-red1;
+        vertical-align: middle;
+    }
+}
+
+.alert-detail {
+    text-align: left;
+
+    min-width: 600px;
+    min-height: 450px;
+
+    padding-top: 1em;
+
+    .settings-tab {
+        .line {
+            margin-bottom: 1em;
+        }
+    }
+
+    .limits-tab {
+        .value-line {
+            margin-top: 0.5em;
+
+            .txt {
+                display: inline-block;
+                width: 100px;
+                // vertical-align: middle;
+            }
+
+            // .input-number {
+            //     vertical-align: middle;       
+            // }
+
+            .value-slider {
+                vertical-align: middle;
+            }
+        }
+    }
+     
+
+    .content {
+        padding: 0.5em;
+    }
+}
+
+.alert-popup {
+    
+    .remark {
+        padding: 0.5em;
+        text-align: left;
+        
+        .label {
+            font-weight: bold;
+        }
+
+        .txt {
+
+        }
+    }
+}

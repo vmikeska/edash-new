@@ -1,0 +1,90 @@
+<div class="alert-detail">
+
+    <wizard #wizard [steps]="steps" [useNumbers]="!isEditing" [content]="wizardContent" (onStepChange)="onStepChange($event)"></wizard>
+
+    <div #wizardContent class="content">
+
+        <div class="tabInsturment">
+            <instrument-selection [mainForm]="formsManager.defaultForm" [singleMode]="true" (onSingeSelectionChange)="onInstrumentSelected($event)">
+            </instrument-selection>
+
+        </div>
+
+
+        <div class="tabLimits limits-tab">
+            <stock-chart #chartComponent></stock-chart>
+
+            <div *ngIf="limitValues">
+
+                <div class="value-line">
+                    <span class="txt">Oberes Limit</span>
+
+                    <input-number #upperInputNumber                    
+                        [defaultValue]="limitValues.upperLimit" 
+                        [minValue]="limitValues.upperSliderMin" 
+                        [maxValue]="limitValues.upperSliderMax"
+                        [decimals]="2"                         
+                        [pxWidth]="50"
+                        (onChange)="upperLimitChanged($event)"
+                    ></input-number>
+                    
+                    <value-slider #upperSlider
+                        [widthPx]="300" 
+                        [stepsCount]="limitValues.upperSliderSteps" 
+                        [defaultIndex]="limitValues.upperSliderDefaultIndex" 
+                        (onChange)="sliderUpperLimitChanged($event)"
+                    ></value-slider>
+
+
+
+                </div>
+
+                <div class="value-line">
+                    <span class="txt">Unteres Limit</span>
+
+                    <input-number #lowerInputNumber
+                        [defaultValue]="limitValues.lowerLimit" 
+                        [minValue]="limitValues.lowerSliderMin" 
+                        [maxValue]="limitValues.lowerSliderMax"
+                        [decimals]="2"                         
+                        [pxWidth]="50"
+                        (onChange)="lowerLimitChanged($event)"
+                    ></input-number>
+    
+                    <value-slider #lowerSlider
+                        [widthPx]="300" 
+                        [stepsCount]="limitValues.lowerSliderSteps" 
+                        [defaultIndex]="limitValues.lowerSliderDefaultIndex" 
+                        (onChange)="sliderLowerLimitChanged($event)"
+                    ></value-slider>
+    
+    
+                    </div>
+
+                <!-- todo: when show: 'Wert ist außerhalb der gültigen Spanne' -->
+                
+            </div>
+        </div>
+
+        <div class="tabSettings settings-tab">
+            <div class="line">
+                <checkbox text="Client Popup" [defaultValue]="notifyPopupDefaultValue" [form]="settingsForm" name="notifyPopup" [formTabIndex]="1"></checkbox>
+            </div>
+            <div class="line">
+                <checkbox text="eMail senden"  [defaultValue]="notifyMailDefaultValue" [form]="settingsForm" name="notifyMail" [formTabIndex]="2"></checkbox>
+            </div>
+            <div class="line">
+                <checkbox text="SMS senden"  [defaultValue]="notifySMSDefaultValue"  [form]="settingsForm" name="notifySMS" [formTabIndex]="3"></checkbox>
+            </div>
+            <div class="line">
+                <textarea-input [maxLength]="255"  [defaultValue]="remarkDefaultValue"  placeholder="Bemerkung zu Limit" [form]="settingsForm" name="remark" [formTabIndex]="4"></textarea-input>
+            </div>
+            
+           
+           
+        </div>
+
+    </div>
+
+
+</div>

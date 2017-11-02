@@ -1,0 +1,25 @@
+<div class="form-horizontal col2 v-borders">
+
+    <div class="form-item">
+
+        <list-button #configListBox 
+            [editable]="true" 
+            [linesCount]="6" 
+            mapping="name,name" 
+            [dataObservable]="savedConfigsObservable" 
+            [buttons]="configButtons"
+            [clickable]="true" 
+            (buttonClicked)="configBtnClicked($event)"
+            (onNameSave)="onNameSave($event)"
+            
+            ></list-button>
+
+    </div>
+
+    <div class="form-item btns">
+
+        <span class="lbtn focus-blue" (click)="newConfigClick()">Create new config</span>
+
+    </div>
+
+</div>

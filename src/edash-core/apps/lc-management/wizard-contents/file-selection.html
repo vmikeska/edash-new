@@ -1,0 +1,18 @@
+
+<div fileDragDrop
+    class="file-selection-all" 
+    (filesChangeEmiter)="onFilesChange($event)" 
+    (filesInvalidEmiter)="onFileInvalids($event)" 
+    [allowedExtensions]="allowedExtensions"
+    >
+
+    <div class="dnd-frame">
+        <span class="event-text">Drop file here</span>
+    </div>
+
+    <input id="sfuUpload" type="file" (change)="onFilesLoaded($event)" />
+    <label for="sfuUpload" class="lbtn focus-blue">Click to open dialog or drag file</label>
+
+</div>
+
+

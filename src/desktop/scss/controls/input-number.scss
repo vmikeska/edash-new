@@ -1,0 +1,72 @@
+@import "../main";
+
+.input-number {
+    position: relative;
+    display: inline-block;
+
+    padding-right: 1em;    
+
+    text-align: right !important;
+
+    .custom-input {
+        text-align: right;
+
+        padding-left: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-right: 0.3em;
+
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+    .up
+    {
+        position: absolute;
+        right: 0;
+        top: 0;        
+        
+        border-top: 1px solid $controls-border-color;
+        border-bottom: 1px solid $controls-border-color;
+        border-right: 1px solid $controls-border-color;
+    }
+
+    .down
+    {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        border-bottom: 1px solid $controls-border-color;
+        border-right: 1px solid $controls-border-color;
+    }
+
+    .ico {
+        display: inline-block;
+
+        line-height: 1 !important;
+
+        vertical-align: middle;
+
+        height: 1em;
+
+        cursor: pointer;
+
+        background-color: $input-number-btns-bck;
+        color: white;
+
+        &:hover {
+            background-color: $standard-focus;
+        }
+    }
+
+    .form-focusable {
+        border: 1px solid $controls-border-color;
+
+        &:focus {
+            outline: none;            
+            border: 1px solid $standard-focus;
+        }
+    }
+}

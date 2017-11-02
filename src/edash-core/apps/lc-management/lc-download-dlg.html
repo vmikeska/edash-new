@@ -1,0 +1,52 @@
+<div class="lc-download-dlg">
+
+    <div class="tbl">
+
+        <div class="row">
+            <div class="cell left">Lastgang:</div>
+            <div class="cell right">
+                {{lName}}
+            </div>
+        </div>
+        
+
+        <div class="row">
+            <div class="cell left">Von:</div>
+            <div class="cell right">
+                <calendar-modal [defaultValue]="sinceDefault" [form]="defaultForm" name="since" [formTabIndex]="1"></calendar-modal>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell left">Bis:</div>
+            <div class="cell right">
+                <calendar-modal [defaultValue]="untilDefault" [form]="defaultForm" name="until" [formTabIndex]="2"></calendar-modal>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell left">Summiert auf:</div>
+            <div class="cell right">
+                <combo-box [form]="defaultForm" name="period" [formTabIndex]="3" [items]="periods"></combo-box>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell left">Einheit:</div>
+            <div class="cell right">
+                <combo-box [form]="defaultForm" name="units" [formTabIndex]="4" [items]="unitsList"></combo-box>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <!-- [form]="defaultForm" name="name" [formTabIndex]="1" -->
+
+
+    </div>
+
+</div>

@@ -1,0 +1,22 @@
+<div class="alerts">
+
+    <div class="size-fixed menu-bar" data-height="36">
+        <span class="lbtn focus-blue" (click)="addNewAlertClicked()"><span class="button-ico icon-plus"></span> New alert</span>    
+    </div>
+    
+    <div class="size-dynamic table-parent-cont" data-height="1">
+    <data-table 
+        [parent]="this"
+        emptyText="no alerts created"             
+        [observableData]="observableData" 
+        [headers]="headers" 
+        [serviceMenuActions]="customActions" 
+        (onActionMenuClick)="itemActionClick($event)"
+        (onCheckboxChange)="onTableCheckboxChange($event)"
+        cellsClass="h-center" 
+        headerClass="font-normal h-center" ></data-table>
+
+    </div>
+
+
+</div>

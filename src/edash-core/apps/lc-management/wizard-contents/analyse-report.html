@@ -1,0 +1,51 @@
+<div class="form-block extracted-data">
+
+    <div class="title">Erkannte Lastgangdate</div>
+
+    <div class="table-cont">
+
+        <div class="table">
+            <div class="row">
+
+                <div class="cell cell-label">
+                    <span class="label">Zeilen:</span>
+                </div>
+                <div class="cell cell-value">{{data.rowsCount}}</div>
+
+                <div class="cell cell-label">
+                    <span class="label">Intervall:</span>
+                </div>
+                <div class="cell cell-value">{{data.intervalText}}</div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="cell cell-label">
+                    <span class="label">Ausrollen:</span>
+                </div>
+                <div class="cell cell-value">{{data.rollableText}}</div>
+
+                <div class="cell cell-label">
+                    <span class="label">Probleme:</span>
+                </div>
+                <div class="cell cell-value">{{data.errorsCount}}</div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="cell cell-label">
+                    <span class="label">Summe der Werte:</span>
+                </div>
+                <div class="cell cell-value">{{data.sum | number:'3.2-2'}}</div>
+
+                <div class="cell cell-label"></div>
+                <div class="cell cell-value"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

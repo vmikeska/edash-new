@@ -1,0 +1,5 @@
+<div class="tabs-menu-component">
+
+    <span class="item" *ngFor="let item of items" [ngClass]="{'active': item.active}" (click)="tabClicked(item)">{{item.name}}</span>
+
+</div>

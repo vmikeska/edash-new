@@ -1,0 +1,16 @@
+<div #focusable class="calendar disableable form-focusable" tabindex="{{tabindex}}" [ngClass]="{'disabled': !enabled}">
+
+    <div class="disabled-cover"></div>
+
+    <span class="date-cont" [ngClass]="{'invalid': !dateValid}">
+
+        <input #input1 (keydown)="inputKeyDown($event, 1)" (focus)="inputFocusIn(1)" tabindex="-1" [maxlength]="dateBoxMaxLength1" class="date-part" [(ngModel)]="dateBoxValue1" [ngClass]="dateBoxClass1" (ngModelChange)="textChanged()" />
+        <span class="splitter">{{splitter}}</span>
+        <input #input2 (keydown)="inputKeyDown($event, 2)" (focus)="inputFocusIn(2)" tabindex="-1" [maxlength]="dateBoxMaxLength2" class="date-part" [(ngModel)]="dateBoxValue2" [ngClass]="dateBoxClass2" (ngModelChange)="textChanged()" />
+        <span class="splitter">{{splitter}}</span>
+        <input #input3 (keydown)="inputKeyDown($event, 3)" (focus)="inputFocusIn(3)" tabindex="-1" [maxlength]="dateBoxMaxLength3" class="date-part" [(ngModel)]="dateBoxValue3" [ngClass]="dateBoxClass3" (ngModelChange)="textChanged()" />
+
+    </span>
+
+    <span class="dlg-btn icon-calendar" (click)="calendarClicked()"></span>
+</div>

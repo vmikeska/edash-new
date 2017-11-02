@@ -1,0 +1,82 @@
+@import "../main";
+
+.calendar {
+    position: relative;
+    display: inline-block;
+    line-height: 2;
+
+    padding-left: 3px;
+    padding-right: 1.8em;
+
+    vertical-align: middle;
+
+    box-sizing: border-box;
+
+    background-color: white;
+
+    .dlg-btn {
+        @include centerer-vertical;
+        right: 3px;
+
+        font-size: 1.3em;
+        line-height: 0.8;
+        display: inline-block;
+
+        cursor: pointer;
+
+        &:hover {
+            color: $standard-hover;            
+        }
+    }
+
+    .date-cont {        
+        display: inline-block;
+
+        &.invalid {
+            input, .splitter {
+                color: red;
+            }            
+        }
+
+        .box2 {
+            width: 1.2em;
+        }
+
+        .box4 {
+            width: 2.4em;
+        }
+
+        .date-part {
+            display: inline-block;
+            border: 0;
+            
+            margin:0;
+            padding: 0;
+
+            line-height: 1.5;
+            text-align: center;
+            
+            &:focus {
+                outline: none;
+            
+            }            
+        }
+
+        .splitter {
+            display: inline-block;           
+            line-height: 1.5;
+
+            margin:0;
+            padding: 0;
+        }
+    }
+
+    &.form-focusable {
+        border: 1px solid $controls-border-color;
+
+        &:focus {
+            outline: none;
+            border: 1px solid $standard-focus;
+        }
+    }
+}

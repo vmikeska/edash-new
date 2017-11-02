@@ -1,0 +1,34 @@
+
+.wizard {    
+
+    $wizard-active-bck: $b-gray1;
+    $wizard-inactive-bck: $b-gray4;
+
+    .step {
+        display: inline-block;
+
+        line-height: 2;
+        padding-left: 1em;
+        padding-right: 1em;
+
+        margin-left: 0.5em;
+
+        color: $inverted-font-color;
+        background-color: $wizard-inactive-bck;
+
+        cursor: pointer;
+
+        &:hover {
+            background-color: $standard-focus;
+        }
+
+        &.active {
+            background-color: $wizard-active-bck;
+        }
+
+        &.disabled {
+            pointer-events: none;
+            opacity: 0.4;
+        }
+    }
+}

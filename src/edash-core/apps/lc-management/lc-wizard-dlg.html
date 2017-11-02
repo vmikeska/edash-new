@@ -1,0 +1,17 @@
+<div class="lc-wizard-dlg">
+
+        <div class="wizard-steps" [ngClass]="{'invisible': !wizardSteps}">
+            <wizard #wizard [steps]="wizardSteps" [useNumbers]="true" (onStepChange)="onStepChange($event)"></wizard>
+        </div>
+
+        <div class="steps-content">
+            <type-selection-content *ngIf="activeStep === LcWizardStepName.TypeSelection" (onFinished)="typeSelected($event)"></type-selection-content>
+            <standard-file-upload-content *ngIf="activeStep === LcWizardStepName.StandardFileUpload" (onFinished)="standardFileUploaded($event)"></standard-file-upload-content>
+            <custom-file-upload-content *ngIf="activeStep === LcWizardStepName.CustomFileUpload" (onFinished)="customFileUploaded($event)"></custom-file-upload-content>
+            <final-save-content *ngIf="activeStep === LcWizardStepName.FinalSave" [mainForm]="finalSaveForm" [analyseData]="analyseData"></final-save-content>            
+            <parse-values-content *ngIf="activeStep === LcWizardStepName.ParseValues" [mainForm]="parseValuesForm"></parse-values-content>
+            <analyse-content *ngIf="activeStep === LcWizardStepName.Analyse" [analyseResult]="analyseResult" [analyseData]="analyseData"></analyse-content>            
+            <text-content *ngIf="activeStep === LcWizardStepName.Text" (onChange)="onTextInput($event)"></text-content>
+        </div>
+
+</div>

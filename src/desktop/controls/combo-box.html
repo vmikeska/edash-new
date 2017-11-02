@@ -1,0 +1,22 @@
+
+<!-- [ngClass]="{'height100': customPxSize === null}" [style.height.px]="customPxSize" -->
+
+<div class="combo-box" [style.lineHeight]="lineHeight">
+    <div #focusable class="box form-focusable" (click)="expandCollapseClicked()" tabindex="{{tabindex}}">
+        <span class="selected-val">{{selectedText}}</span>
+        
+        <span *ngIf="!dropOpened" class="open-close icon-chevron-down"></span>
+        <span *ngIf="dropOpened" class="open-close icon-chevron-up"></span>        
+    </div>
+
+    <div #itemsCont [ngClass]="{'hidden': !dropOpened}" class="drop" [style.height.px]="totalHeight">
+        <div *ngFor="let i of items" 
+        class="item" 
+        [ngClass]="getCurrentItemClass(i)"
+        (click)="itemClicked(i)"
+
+        
+        >{{i.text}}</div>
+    </div>
+
+</div> 

@@ -1,0 +1,21 @@
+
+
+.resizing-grid {
+    position: relative;
+
+    background-color: $resizing-grid-line-color;
+
+    height: 100%;
+    width: 100%;
+
+    .rect {
+        position: absolute;
+        display: inline-block;
+
+        background-color: $resizing-grid-rect-color;
+
+        &.highlighted {
+            background-color: $resizing-grid-rect-high-color;
+        }
+    }
+}

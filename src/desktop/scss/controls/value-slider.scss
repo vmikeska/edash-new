@@ -1,0 +1,109 @@
+@import "../main";
+
+$value-slider-bck: $b-gray2;
+$value-slider-mover-bck: $b-blue6;
+$value-slider-step-line-color: $b-black1;
+$value-slider-arrow-bck: $b-gray3;
+
+.value-slider {
+
+    $slider-height: 2em;
+    $gap: 20px;
+    $line-margin: 3px;
+
+  
+
+    display: inline-block;
+    height: $slider-height;
+
+    .itbl {
+        display: table;
+
+        .left, .right, .middle {
+            display: table-cell;
+            height: $slider-height;
+            vertical-align: top;
+        }
+
+        .left {
+            padding-right: 3px;
+        }
+
+        .right {
+            padding-left: 3px;
+        }
+
+        .middle {
+            background-color: $value-slider-bck;
+            position: relative;
+
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+    }
+
+    .arrow-cont {
+        text-align: center;
+        display: inline-block;
+
+        height: $slider-height;
+        line-height: $slider-height;
+        width: $slider-height;
+
+        cursor: pointer;
+
+        background-color: $value-slider-arrow-bck;
+
+        &:hover {
+            background-color:  $standard-hover;
+        }
+
+        .arrow {            
+            display: inline-block;
+            color: $inverted-font-color;
+            vertical-align: middle;
+        }
+    }
+
+    .part {
+        display: inline-block;
+        border-left: 1px solid $value-slider-step-line-color;
+        height: calc(100% - (#{$line-margin} * 2));
+
+        box-sizing: border-box;
+
+        margin-top: $line-margin;
+        margin-bottom: $line-margin;
+
+        &:last-of-type {
+            border-right: 1px solid $value-slider-step-line-color;
+        }
+    }
+
+    .moving-space {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        z-index: 29;
+
+        background-color: transparent;
+    }
+
+    .mover {
+        position: absolute;
+        top: 0;
+        
+        display: inline-block;
+
+        height: $slider-height;
+        
+        background-color: $value-slider-mover-bck;
+
+        z-index: 30;
+
+        cursor: pointer;
+    }
+}

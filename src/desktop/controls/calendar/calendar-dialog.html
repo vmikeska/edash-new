@@ -1,0 +1,63 @@
+<div class="calendar-dialog">
+
+    <div class="date-bar">
+        <div class="date-value">{{date.format("L")}}</div>
+    </div>
+
+    <div class="tabs-bar">
+        <tabs [items]="tabs" (onTabClicked)="onTabClicked($event)"></tabs>
+    </div>
+
+    <div class="contents-wrap">
+        <div class="contents-tbl" [ngClass]="{'show-arrows': showArrows}">
+
+            <div class="cont-left arrow-cont" (click)="arrowClicked('prev')">
+                <span class="arrow icon-chevron-left"></span>
+            </div>
+
+            <div class="contents">
+                <div class="tabs-content contDays">
+
+                    <div class="days-all">
+
+                        <div class="days-title">
+                            <div *ngFor="let td of days.names" class="day" [ngClass]="{'weekend': td.weekend}">{{td.text}}</div>
+                        </div>
+
+                        <div class="week-row" *ngFor="let week of days.weeks">
+                            <div *ngFor="let day of week.days" class="day" [ngClass]="{'active': day.active,'weekend': day.weekend, 'disabled': day.disabled }"
+                                (click)="dayClicked(day)">{{day.dayNo}}</div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="tabs-content contMonths">
+                    <div class="months-all">
+                        <div *ngFor="let monthGroup of monthGroups" class="row">
+                            <div *ngFor="let monthObj of monthGroup" class="month" [ngClass]="{'active': (date.month() + 1) === monthObj.num, 'disabled': monthObj.disabled}" (click)="monthClick(monthObj.num)">{{getMonthTxt(monthObj.num)}}</div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="tabs-content contYears">
+                    <div class="years-all">
+                        <div *ngFor="let yearGroup of yearsGroups" class="row">
+                            <div *ngFor="let yearObj of yearGroup" class="year" [ngClass]="{'active': date.year() === yearObj.num, 'disabled': yearObj.disabled}" (click)="yearClick(yearObj.num)">{{yearObj.num}}</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="cont-right arrow-cont" (click)="arrowClicked('next')">
+                <span class="arrow icon-chevron-right"></span>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

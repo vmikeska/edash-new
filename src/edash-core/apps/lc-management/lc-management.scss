@@ -1,0 +1,292 @@
+.lc-management {
+
+    .menu-bar {
+        text-align: right;
+        padding-top: 0.3em;
+        padding-right: 0.5em;
+    }
+}
+
+.lc-wizard-dlg {
+
+    $content-height: 300px;
+
+    .wizard-steps {
+        text-align: left;
+        height: 3em;
+        line-height: 3;
+    }
+
+    .wizard-content {
+        position: relative;
+        min-width: 480px;
+        height: $content-height;
+        padding: 0.5em;
+    }
+
+    .file-selection-all {
+        $drag-color: $b-blue6;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        .dnd-frame {
+            display: none;
+
+            .event-text {
+                font-size: 1.4em;
+                font-weight: bold;
+                display: inline-block;
+                color: $drag-color;
+                @include centerer;
+            }
+        }
+
+        input {
+            width: .1px;
+            height: .1px;
+            opacity: 0;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        label {
+            @include centerer;
+        }
+
+        &.hovered {
+            .dnd-frame {
+                display: block;
+
+                position: absolute;
+                top: 0.5em;
+                left: 0.5em;
+                right: 0.5em;
+                bottom: 0.5em;
+
+                border: 2px dashed $drag-color;
+
+                background-color: white;
+                z-index: 10;
+            }
+
+            input,
+            label {
+                display: none;
+            }
+        }
+    }
+
+    .type-selection {
+        .tbl {
+            display: table;
+            width: 100%;
+            height: $content-height;
+
+            .col {
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+        }
+
+        .buttons {
+            display: inline-block;
+            width: 300px;
+            line-height: 2;
+
+            .button {
+                background-color: $b-gray1;
+                cursor: pointer;
+
+                margin-bottom: 2em;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+
+                .ico {
+                    color: $inverted-font-color;
+                }
+
+                .txt {
+                    color: $inverted-font-color;
+                }
+
+                &:hover {
+                    background-color: $standard-rect-hover-bck;
+                }
+            }
+        }
+    }
+
+    .standard-file-upload {
+        text-align: center;
+        font-size: 1.1em;
+
+        .template-download {
+            position: absolute;
+            top: 0.5em;
+            left: 0;
+            right: 0;
+
+            .info {}
+
+            .download {
+                color: $b-blue5;
+                text-decoration: underline;
+
+                cursor: pointer;
+            }
+        }
+    }
+
+    .final-save {}
+
+    .table-cont {
+        .table {
+            display: table;
+            width: 100%;
+
+            .row {
+                display: table-row;
+            }
+
+            .cell {
+                display: table-cell;
+                $pad: 0.3em;
+                padding-top: $pad;
+                padding-bottom: $pad;
+            }
+        }
+    }
+
+    .form-block {
+        text-align: left;
+        margin-bottom: 1em;
+
+        .title {
+            font-weight: bold;
+            margin-bottom: 0.5em;
+        }
+
+        .cell-value {
+            padding-right: 0.5em;
+        }
+    }
+
+    .form-block-vert {
+        text-align: left;
+
+        .title {
+            font-weight: bold;
+            margin-bottom: 0.5em;
+        }
+
+        .cell-label {
+            width: 120px;
+        }
+
+        .cell-value {
+            width: 50px;
+        }
+
+        .cell-desc {
+            padding-left: 1.5em
+        }
+    }
+
+    
+
+    .parse-values {
+        
+    }
+
+    .analyse-content {
+        height: 100%;
+        
+
+        .table-parent-cont {
+            height: 180px;
+            //border: 1px solid red;
+        }
+    }
+
+    .text-content {
+        .textarea-input {
+            height: 100%;
+
+            textarea {
+                height: 100%;
+                resize: none;
+            }
+        }
+        
+    }
+}
+
+.lc-edit-dlg {
+    padding: 1em;
+
+    .tbl {
+        display: table;
+        width: 100%;
+
+        .row {
+            text-align: left;
+            display: table-row;
+
+            $pad: 0.3em;
+
+            .cell {
+                padding-top: $pad;
+                padding-bottom: $pad;
+            }
+            
+            .left {
+                display: table-cell;                
+            }
+
+            .right {
+                display: table-cell;
+            }
+        }
+    }
+}
+
+.lc-download-dlg {
+    padding: 1em;
+    
+        .tbl {
+            display: table;
+            width: 100%;
+    
+            .row {
+                text-align: left;
+                display: table-row;
+    
+                $pad: 0.3em;
+    
+                .cell {
+                    padding-top: $pad;
+                    padding-bottom: $pad;
+                }
+                
+                .left {
+                    display: table-cell;                
+                }
+    
+                .right {
+                    display: table-cell;
+                }
+            }
+        }
+}

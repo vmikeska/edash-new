@@ -1,0 +1,43 @@
+<div class="menu-content-with-header">
+
+  <div class="mheader">
+    APPLICATIONS
+  </div>
+
+  <div class="mcont">
+
+    <div class="main-menu-items">
+
+      <div *ngFor="let i of items" class="item" (mouseover)="openItem(i)">
+        <div class="mtbl">
+          <div class="left">
+            <img class="ico" src="assets/doc.svg" />
+          </div>
+          <div class="right">
+            <span class="txt">{{i.text}}</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="main-menu-items" *ngIf="subItems">
+
+      <div [style.height.px]="menuGapPx"></div>
+
+      <div *ngFor="let i of subItems" class="item" (click)="itemClicked(i);">
+        <div class="mtbl">
+          <div class="left">
+            <img class="ico" src="assets/doc.svg" />
+          </div>
+          <div class="right">
+            <span class="txt">{{i.text}}</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

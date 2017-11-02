@@ -1,0 +1,79 @@
+<div class="wizard-content parse-values">
+
+    
+
+    <div class="form-block-vert">
+
+        <div class="title">Document parsing values</div>
+
+        <div class="table-cont">
+                
+            <div class="table">
+                <div class="row">
+                    <div class="cell cell-label">
+                        <span class="label">Datum Spalte:</span>
+                    </div>
+                    <div class="cell cell-value">
+                        <input-text placeholder="Letter" defaultValue="" [validator]="lettersValidator" [form]="mainForm" name="date" [formTabIndex]="1"></input-text>
+                    </div>
+                    <div class="cell cell-desc">
+                        Datum-Spalte z.Bp. "A"
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="cell cell-label">
+                        <span class="label">Zeit-Spalte:</span>
+                    </div>
+                    <div class="cell cell-value">
+                        <input-text placeholder="Letter" defaultValue="" [validator]="lettersValidator" [form]="mainForm" name="time" [formTabIndex]="2"></input-text>
+                    </div>
+                    <div class="cell cell-desc">
+                        Zeit-Spalte z.Bp. "B"
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="cell cell-label">
+                        <span class="label">Werte-Spalte:</span>
+                    </div>
+                    <div class="cell cell-value">
+                        <input-text placeholder="Letter" defaultValue="" [validator]="lettersValidator" [form]="mainForm" name="volume" [formTabIndex]="3"></input-text>
+                    </div>
+                    <div class="cell cell-desc">
+                        Wert-Spalte z.Bp. "C"
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="cell cell-label">
+                        <span class="label">Arbeitsblatt:</span>
+                    </div>
+                    <div class="cell cell-value">
+                        <input-number [decimals]="0" [defaultValue]="1" [form]="mainForm" name="sheetNo" [formTabIndex]="4"></input-number>
+                    </div>
+                    <div class="cell cell-desc">
+                        Number of excel sheet
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="cell cell-label">
+                        <span class="label">Erste Datenzeile:</span>
+                    </div>
+                    <div class="cell cell-value">
+                        <input-number [decimals]="0" [defaultValue]="1" [form]="mainForm" name="firstDataRow" [formTabIndex]="5"></input-number>
+                    </div>
+                    <div class="cell cell-desc">
+                        First row containing data
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,24 @@
+@import "./colors.scss";
+@import "../desktop/scss/core.scss";
+
+@import "../edash-core/plugins/dashboard/dashboard.scss";
+@import "../edash-core/plugins/dash-connection-indicator/indicator.scss";
+
+@import "../edash-core/apps/quote-page/quote-page.scss";
+@import "../edash-core/apps/quote-page/sell-form.scss";   
+@import "../edash-core/apps/quote-page/new-config-dlg.scss";
+
+@import "../edash-core/apps/realtime-chart/realtime-chart.scss";
+@import "../edash-core/apps/orders/orders.scss";
+@import "../edash-core/apps/history-chart/history-chart.scss";
+@import "../edash-core/apps/eod-data/eod-data.scss";
+@import "../edash-core/apps/market-news/market-news.scss";
+@import "../edash-core/apps/alerts/alerts.scss";
+@import "../edash-core/apps/lc-management/lc-management.scss";
+
+@import "../edash-core/apps/test/controls-form.scss";
+
+
+
+@import "../edash-core/highcharts/stock-chart.scss";
+

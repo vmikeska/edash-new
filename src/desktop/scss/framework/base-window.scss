@@ -1,0 +1,197 @@
+@import "../main";
+
+.win-all {
+
+    $rc-size: 6px;
+
+    $bar-ico-color: $inverted-font-color;
+    $bar-ico-color-hover: $standard-hover;
+
+    display: inline-block;
+    background-color: $win-bck;
+    @include box-shadow2;
+
+    .bar {
+        position: relative;
+        background-color: $win-bar-bck;
+        color: $win-bar-color;
+        padding-left: 0.5em;
+        height: 2em;
+        line-height: 2em;
+
+        font-weight: bold;
+
+        .close-icon-cont {
+            display: inline-block;
+
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 1.7em;
+
+            cursor: pointer;
+
+            text-align: center;
+
+            .win-close {
+                display: inline-block;
+                color: $bar-ico-color;
+
+                line-height: 2em;
+            }
+
+            &:hover {
+                .win-close {
+                    color: $bar-ico-color-hover;
+                }
+            }
+        }
+
+        .min-icon-cont {
+            position: absolute;
+            top: 0;
+            right: 1.7em;
+            bottom: 0;
+            width: 1.7em;
+
+            cursor: pointer;
+
+            text-align: center;
+
+            .win-min {
+                display: inline-block;
+                color: $bar-ico-color;
+
+                line-height: 2em;
+            }
+
+            &:hover {
+                .win-min {
+                    color: $bar-ico-color-hover;
+                }
+            }
+        }
+    }
+
+    .content {
+        position: absolute;
+
+        top: 2em;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+    }
+
+    .resizer {
+        position: absolute;
+        background-color: none;
+        //for debuging: background-color: red;
+        display: inline-block;
+        z-index: 50;
+
+    }
+
+    .resizer-right-bottom-corner {                        
+        right: 0;
+        bottom: 0;
+        
+        width: $rc-size;
+        height: $rc-size;
+
+        cursor: nwse-resize        
+    }
+
+    .resizer-left-bottom-corner {                        
+        left: 0;
+        bottom: 0;
+        
+        width: $rc-size;
+        height: $rc-size;
+
+        cursor: nesw-resize;        
+    }
+
+    .resizer-right-top-corner {
+        top: 0;
+        right: 0;
+        
+        width: $rc-size;
+        height: $rc-size;
+
+        cursor: nesw-resize;        
+    }
+
+    .resizer-left-top-corner {
+        left: 0;
+        top: 0;
+        
+        width: $rc-size;
+        height: $rc-size;
+
+        cursor: nwse-resize;
+    }
+
+    .resizer-right {        
+        top: 2em;
+        right: 0;
+        bottom: 0;
+
+        width: $rc-size;
+
+        cursor: e-resize;        
+    }
+
+    .resizer-left {
+        top: 2em;
+        left: 0;
+        bottom: 0;
+
+        width: $rc-size;
+
+        cursor: e-resize;        
+    }
+
+    .resizer-bottom {        
+        right: 0;
+        left: 0;
+        bottom: 0;
+
+        height: $rc-size;
+
+        cursor: n-resize;
+    }
+
+    .resizer-top {
+        right: 0;
+        left: 0;
+        top: 0;
+
+        height: $rc-size;
+
+        cursor: n-resize;
+    }
+}
+
+
+.mobile-resp {
+
+    .win-all {
+
+        margin-bottom: 8px;
+        width: 100% !important;
+    }
+}
+
+.web-resp {
+
+    .win-all {
+
+        position: absolute;
+
+        .bar {
+            cursor: move;
+        }
+    }
+}

@@ -1,0 +1,130 @@
+<div class="menu-content-with-header menu-notifs">
+
+  <div class="mheader">
+    NOTIFICATIONS
+
+    <div class="btns">
+      <span class="txt">Filter:</span>
+      <span class="btn" (click)="displayMessages('displayed')">New</span>
+      <span class="btn" (click)="displayMessages('all')">All</span>
+
+    </div>
+  </div>
+
+  <div class="mcont">
+
+    <div class="items">
+
+      <div *ngFor="let message of messages" class="item">
+        <div class="svc">
+          <div class="stbl">
+
+            <div class="i first">
+
+
+
+              <span *ngIf="message.importance === importance.Info" class="ico-frame info">
+                <span>i</span>
+              </span>
+
+              <span *ngIf="message.importance === importance.Finished" class="ico-frame check">
+                <span>✔</span>
+              </span>
+
+              <span *ngIf="message.importance === importance.Error" class="ico-frame excla">
+                <span>!</span>
+              </span>
+
+            </div>
+
+            <div class="i second">{{message.title}}</div>
+
+            <div class="i third">{{message.time}}</div>
+
+          </div>
+        </div>
+
+        <div class="txt">{{message.text}}</div>
+
+      </div>
+
+      <!--
+        <div class="item">
+        <div class="svc">
+          <div class="stbl">
+
+            <div class="i first">
+
+              <span class="ico-frame info">
+                <span>i</span>
+              </span>
+
+            </div>
+
+            <div class="i second">Transaction completed</div>
+
+            <div class="i third">21:30</div>
+
+          </div>
+        </div>
+
+        <div class="txt">
+          The transaction has been completed, you are now very very very rich.
+        </div>
+
+      </div>
+
+      <div class="item">
+        <div class="svc">
+          <div class="stbl">
+
+            <div class="i first">
+
+              <span class="ico-frame check">
+                <span>✔</span>
+              </span>
+
+            </div>
+
+            <div class="i second">Gas Bank confirmation</div>
+
+            <div class="i third">17:44</div>
+
+          </div>
+        </div>
+
+        <div class="txt">
+          We have received confirmation about the successfully sent transaction.
+        </div>
+
+      </div>
+
+      <div class="item">
+        <div class="svc">
+          <div class="stbl">
+
+            <div class="i first">
+
+              <span class="ico-frame excla">
+                <span>!</span>
+              </span>
+
+            </div>
+
+            <div class="i second">Bancrupcy confirmation</div>
+
+            <div class="i third">15:21</div>
+
+          </div>
+        </div>
+
+        <div class="txt">
+          It's very sad, but you have unfortunatelly bancrupted.
+        </div>
+
+      </div>-->
+
+    </div>
+
+  </div>
+</div>

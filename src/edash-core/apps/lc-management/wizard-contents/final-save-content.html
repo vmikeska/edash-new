@@ -1,0 +1,67 @@
+<div class="wizard-content final-save">
+
+    <analyse-report [data]="analyseData"></analyse-report>
+
+    <div class="form-block additional-data">
+
+        <div class="title">Weitere Angaben</div>
+
+        <div class="table-cont">
+
+            <div class="table">
+                <div class="row">
+                    <div class="cell cell-label">
+                        <span class="label">Bezeichnung:</span>
+                    </div>
+                    <div class="cell cell-value">
+                        <input-text placeholder="Bezeichnung eingeben" [validator]="nameValidator" [form]="mainForm" name="description" [formTabIndex]="1"></input-text>
+                    </div>
+
+                    <div class="cell cell-label">
+                        <span class="label">VHP:</span>
+                    </div>
+                    <div class="cell cell-value">
+                        <combo-box [form]="mainForm" name="vtp" [formTabIndex]="2" mapping="text,value" [itemsObservable]="vtpsObservable"></combo-box>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="cell cell-label">
+                        <span class="label">Kundengruppe:</span>
+                    </div>
+                    <div class="cell cell-value">                            
+                        <combo-box [form]="mainForm" name="cluster" [formTabIndex]="3" mapping="name,id" [dataObservable]="clusterObservable"></combo-box>
+                    </div>
+
+                    <div class="cell cell-label">
+                        <span class="label">Zeitangaben:</span>
+                    </div>
+                    <div class="cell cell-value">
+                        <combo-box [form]="mainForm" name="time" [formTabIndex]="4" [items]="useFromList"></combo-box>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="cell cell-label">
+                        <span class="label">Einheit:</span>
+                    </div>
+                    <div class="cell cell-value">
+                        <combo-box [form]="mainForm" name="units" [formTabIndex]="5" [items]="unitsList"></combo-box>
+                    </div>
+
+                    <div class="cell cell-label">
+                        <span class="label">Ausrollen:</span>
+                    </div>
+                    <div class="cell cell-value">
+                        <checkbox [form]="mainForm" name="roll" [formTabIndex]="6"></checkbox>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</div>

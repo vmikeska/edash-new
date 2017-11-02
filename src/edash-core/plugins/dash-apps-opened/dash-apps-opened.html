@@ -1,0 +1,30 @@
+<div class="menu-content-with-header apps">
+
+    <div class="mheader">
+        APPS
+
+        <div class="btns">
+            <span class="btn" (click)="closeAll()">Close all</span>            
+        </div>
+    </div>
+
+    <div class="mcont">
+
+        <div class="item-all" *ngFor="let inst of instances">
+
+            <div class="txt">
+                {{inst.parentWin.title}}
+            </div>
+
+            <div class="img-cont" [addElement]="inst.lastThumb">
+
+            </div>
+
+            <div class="cover" (click)="itemClicked(inst)" (mouseenter)="itemEnter(inst)" (mouseout)="itemOut(inst)"></div>
+
+        </div>
+
+        <div *ngIf="instances.length === 0" class="no-apps">No hidden apps</div>
+
+    </div>
+</div>

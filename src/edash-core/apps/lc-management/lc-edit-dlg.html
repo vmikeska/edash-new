@@ -1,0 +1,26 @@
+<div class="lc-edit-dlg">
+
+
+    <div class="tbl">
+        <div class="row">
+            <div class="cell left">Bezeichnung:</div>
+            <div class="cell right">
+                    <input-text [defaultValue]="name" placeholder="Bezeichnung eingeben" [validator]="nameValidator" [form]="defaultForm" name="name" [formTabIndex]="1"></input-text>
+            </div>
+        </div>
+        <div class="row">
+            <div class="left">Kundengruppe:</div>
+            <div class="cell right">
+                    <combo-box [defaultValue]="clusterId" [form]="defaultForm" name="cluster" [formTabIndex]="2" mapping="name,id" [dataObservable]="clusterObservable"></combo-box>
+            </div>
+        </div>
+        <div class="row">
+            <div class="cell left">Erneut ausrollen:</div>
+            <div class="cell right">
+                    <checkbox [form]="defaultForm" name="roll" [formTabIndex]="3"></checkbox>
+            </div>
+        </div>
+    </div>
+
+    
+</div>

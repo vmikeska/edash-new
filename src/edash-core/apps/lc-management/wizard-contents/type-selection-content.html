@@ -1,0 +1,16 @@
+<div class="wizard-content type-selection">
+    <div class="tbl">
+        <div class="col">
+
+            <div class="buttons">
+                    
+                <div *ngFor="let btn of buttons" class="button" (click)="buttonClicked(btn.type)">
+                    <span class="ico" [ngClass]="btn.icon"></span>
+                    <span class="txt">{{btn.text}}</span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

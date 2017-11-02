@@ -1,0 +1,34 @@
+
+//seems entire directory imports are not possible, Angular-cli have opened feature request here:
+//https://github.com/angular/angular-cli/issues/7538
+
+@import "main.scss";
+
+@import "framework/resizing-grid.scss";
+@import "framework/form.scss";
+@import "framework/layout.scss";
+@import "framework/modal-dialog.scss";
+@import "framework/base-window.scss";
+
+@import "controls/tabs.scss";
+@import "controls/calendar.scss";
+@import "controls/year-picker.scss";
+@import "controls/list-button.scss";
+@import "controls/switch.scss";
+@import "controls/value-slider.scss";
+@import "controls/data-table.scss";
+@import "controls/list-box.scss";
+@import "controls/checkbox.scss";
+@import "controls/list-checker.scss";
+@import "controls/tabs-menu.scss";
+@import "controls/radio-buttons.scss";
+@import "controls/calendar-modal.scss";
+@import "controls/input-number.scss";
+@import "controls/number-vertical.scss";
+@import "controls/time-control.scss";
+@import "controls/combo-box.scss";
+@import "controls/form-button.scss";
+@import "controls/calendar-dialog.scss";
+@import "controls/wizard.scss";
+@import "controls/textarea.scss";
+@import "controls/input-text.scss";

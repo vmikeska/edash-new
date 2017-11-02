@@ -1,0 +1,34 @@
+<div class="value-slider" [ngClass]="{'moving': movingStarted}">
+
+    <div class="itbl">
+        <div class="left">
+
+            <span class="arrow-cont" (click)="move(false)">
+                <span class="arrow icon-chevron-left"></span>
+            </span>
+
+        </div>
+
+        <div #middle class="middle" [style.padding-right.px]="moverWidth / 2" [style.padding-left.px]="moverWidth / 2"
+            [style.width.px]="widthPx">
+
+            <ng-container *ngIf="!widthPx">
+                <div *ngFor="let part of parts" [style.width.px]="stepPxInternal" class="part"></div>
+            </ng-container>
+
+            <span class="moving-space" (click)="valueClicked($event)"></span>
+
+            <span #mover class="mover" [style.left.px]="currentLeft" [style.width.px]="moverWidth" (mousedown)="moverClicked($event)"></span>
+        </div>
+
+        <div class="right">
+
+            <span class="arrow-cont" (click)="move(true)">
+                    <span class="arrow icon-chevron-right"></span>
+            </span>
+
+        </div>
+
+    </div>
+
+</div>

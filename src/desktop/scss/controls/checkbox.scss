@@ -1,0 +1,32 @@
+@import "../main";
+
+.checkbox {  
+    line-height: 1 !important;
+    color: $standard-font-color !important;
+
+    .checker {
+        display: inline-block;
+        vertical-align: middle;
+        
+        width: 1.1em;
+        height: 1.1em;
+
+        background-color: $controls-bck;
+
+        cursor: pointer;
+    }
+
+    .label {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .form-focusable {
+        border: 1px solid $controls-border-color;
+
+        &:focus {
+            outline: none;
+            border: 1px solid $standard-focus;
+        }
+    }
+}

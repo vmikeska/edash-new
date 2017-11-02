@@ -1,0 +1,106 @@
+
+<div class="form-horizontal v-borders" [ngClass]="colsClass">
+
+    <div [ngClass]="{'hidden': !showExchangesListBox}" class="form-item">
+
+        <div class="control-title">Handelspartner</div>
+        <list-box 
+            mapping="exchange.name,exchange.id" 
+            [linesCount]="5" 
+            (selectedItemChange)="exchangeChange($event)"
+            [dataObservable]="exchangesObservable"
+
+            [form]="mainForm" 
+            
+            name="exchange"
+            [formTabIndex]="1"            
+            >
+        
+        </list-box>
+
+    </div>
+
+     <div class="form-item">
+
+        <div class="control-title">VHP</div>        
+        <list-box 
+            mapping="name,name" 
+            [linesCount]="5" 
+            
+            [dataObservable]="vtpsObservable"
+            
+            (selectedItemChange)="vtpsChange($event)"
+            [form]="mainForm" 
+            name="vtps"
+            [formTabIndex]="2"
+            >
+        
+        </list-box>
+
+        
+    </div>
+
+    <div [ngClass]="{'hidden': loadPeriods.length === 1}" class="form-item">
+    
+        <div class="control-title">Typ</div>
+
+        <list-box 
+            mapping="name,name" 
+            [dataObservable]="loadPeriodsObservable"
+
+            (selectedItemChange)="loadPeriodsChange($event)" 
+            
+            [linesCount]="5" 
+            [enabled]="loadPeriods.length > 1"
+            
+            [form]="mainForm" 
+            name="type"
+            [formTabIndex]="3"
+            >
+        
+        </list-box>
+
+    </div>
+
+
+    <div class="form-item">
+
+        <div class="control-title">Produkte</div>
+        
+        
+        <list-checker *ngIf="!singleMode" #instrSelMulti 
+            
+            mapping="instrument.symbol,id"
+            
+            [linesCount]="5" 
+            [dataObservable]="instrumentsObservable" 
+
+            (selectedItemChange)="instrumentsSelectionChanged($event)"
+            
+            [form]="mainForm" 
+            name="instruments"
+            [formTabIndex]="4"
+            
+            >
+        </list-checker>        
+
+        <list-box *ngIf="singleMode" #instrSelSingle 
+        
+            mapping="instrument.symbol,id"
+            
+            [linesCount]="5" 
+            [dataObservable]="instrumentsObservable" 
+
+            (selectedItemChange)="instrumentSelectionChanged($event)"
+            [selectFirst]="singleModeInitialSelection"
+
+            [form]="mainForm" 
+            name="instruments"
+            [formTabIndex]="4"
+        
+            >
+        </list-box>        
+        
+    </div> 
+
+</div>

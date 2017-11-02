@@ -1,0 +1,15 @@
+<div #windowAll class="window-all" [ngClass]="responsiveClass">
+
+  <div class="bck"></div>
+
+  <div #plugins></div>
+
+  <div id="winCont" class="windows" (mousemove)="mouseMove($event)" (mouseup)="mouseUp($event)">
+
+      <div id="resizingGrid" class="resizing-grid" [ngClass]="{'hidden' : gridConsts.hidingStyle}"></div>
+
+    <div #content></div>
+
+  </div>
+
+</div>

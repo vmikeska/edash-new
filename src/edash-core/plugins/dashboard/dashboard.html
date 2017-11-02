@@ -1,0 +1,80 @@
+<div class="dash-info" [ngClass]="{'collapsed': collapsed}" (mouseenter)="dashboardMouseEnter()" (mouseleave)="dashboardMouseLeave()">
+
+    <div class="dash-menu">
+
+        <div class="icon-wrap" title="Expand/Collapse" (click)="expandCollapse()">
+
+            <div class="itbl">
+
+                <div class="left">
+
+                    <div class="icon-cont">
+                        <span class="menu-icon" [ngClass]="{'icon-chevron-right': collapsed, 'icon-chevron-left': !collapsed}"></span>
+                    </div>
+
+                </div>
+                <div class="right">
+
+                </div>
+
+            </div>
+        </div>
+
+        <div *ngFor="let item of menuItems" class="icon-wrap" title="{{item.title}}" (mouseenter)="showContent(item)" (click)="showContent(item)">
+
+            <div class="itbl">
+
+                <div class="left">
+
+                    <div class="icon-cont">
+                        <span class="menu-icon" [ngClass]="item.icon"></span>
+
+                        <span *ngIf="item.messages > 0" class="notif">{{item.messages}}</span>
+                    </div>
+
+                    <div class="preload-cont">
+                        <div *ngIf="item.tasks > 0" class="preload-bar"></div>
+                    </div>
+                </div>
+                <div class="right">
+                    <span class="txt">{{item.title}}</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <dash-connection-indicator></dash-connection-indicator>
+
+        <div class="icon-wrap" title="Toggle fullscreen" (click)="toggleFullscreen()">
+
+            <div class="itbl">
+
+                <div class="left">
+
+                    <div class="icon-cont">
+                        <span class="menu-icon icon-arrows-alt"></span>
+                    </div>
+                </div>
+                <div class="right">
+                    <span class="txt">Fullscreen</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="test-btn" (click)="testBtnClick()"></div>
+
+    </div>
+
+    <div [ngClass]="{'hidden': contentTypeOpened === null}" class="dash-content">
+        
+        <div #content class="top">
+            <span class="close icon-times" (click)="closeMenu()"></span>
+        </div>
+
+    </div>
+
+
+</div>

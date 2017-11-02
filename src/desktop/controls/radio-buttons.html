@@ -1,0 +1,30 @@
+<div #focusable class="radio-buttons form-focusable" [ngClass]="orientationClass" tabindex="{{tabindex}}">
+
+    <div *ngFor="let i of items" class="item" [style.lineHeight]="lineHeight" (click)="itemClicked(i)" [ngClass]="getCurrentItemClass(i)">
+
+        <div class="line-wrap">
+
+            <div class="btbl">
+
+                <div class="left">
+
+                    <span class="r-btn">
+
+                    <span class="inner"></span>
+
+                    </span>
+
+
+                </div>
+
+                <div class="right">
+                    <span class="txt">{{i.text}}</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

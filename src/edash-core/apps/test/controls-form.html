@@ -1,0 +1,91 @@
+<div class="controls-form-test">
+
+    <div class="cf-line">
+
+        <div class="cf-box">
+            <div class="cf-caption">
+                calendar min/max
+            </div>
+
+            <div class="cf-control">
+                <calendar-modal #cal1 [minValue]="calendarMin" [maxValue]="calendarMax"></calendar-modal>
+                <div>last date: {{cal1.date}}</div>
+            </div>
+        </div>
+
+        <div class="cf-box">
+            <div class="cf-caption">
+                calendar disabled
+            </div>
+
+            <div class="cf-control">
+                <input type="checkbox" [(ngModel)]="calEnabled" />
+                <calendar-modal [enabled]="calEnabled"></calendar-modal>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="cf-line">
+
+        <div class="cf-box">
+            <div class="cf-caption">
+                checkbox standard
+            </div>
+
+            <div class="cf-control">
+                <checkbox></checkbox>
+            </div>
+        </div>
+
+        <div class="cf-box">
+            <div class="cf-caption">
+                checkbox disabled
+            </div>
+
+            <div class="cf-control">
+                <checkbox [enabled]="false"></checkbox>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="cf-line">
+
+        <div class="cf-box">
+            <div class="cf-caption">
+                input nubmer
+            </div>
+
+            <div class="cf-control">
+                <input-number [defaultValue]="123456.78" [decimals]="2" [minValue]="100.001" [maxValue]="923456.001"></input-number>
+            </div>
+        </div>
+
+        <div class="cf-box">
+            <div class="cf-caption">
+                input nubmer
+            </div>
+
+            <div class="cf-control">
+                <input-number [enabled]="false" [defaultValue]="123456.78" [decimals]="2" [minValue]="100.001" [maxValue]="923456.001"></input-number>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="cf-line">
+
+        <div class="cf-box">
+            <div class="cf-caption">
+                time
+            </div>
+
+            <div class="cf-control">
+                <time-control [defaultValue]="timeDefault"></time-control>
+            </div>
+        </div>
+
+    </div>
+
+</div>

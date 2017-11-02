@@ -1,0 +1,19 @@
+<div class="input-number disableable" [ngClass]="{'disabled': !enabled}">
+
+    <div class="disabled-cover"></div>
+
+    <input #focusable #input 
+        class="custom-input form-focusable" 
+        type="text" 
+        [value]="displayValue"         
+        tabindex="{{tabindex}}" 
+        [style.width.px]="pxWidth"
+        (focus)="onFocus($event)"
+        (click)="onClick($event)"
+        />
+
+    <span class="ico up icon-up-open" (mousedown)="increaseMouseDown()" (mouseup)="increaseMouseUp()"></span>
+    
+    <span class="ico down icon-down-open" (mousedown)="decreaseMouseDown()" (mouseup)="decreaseMouseUp()"></span>
+
+</div>

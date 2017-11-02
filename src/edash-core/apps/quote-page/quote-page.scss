@@ -1,0 +1,45 @@
+
+
+.quote-page {
+
+    $price-up-color: $b-green1;
+    $price-down-color: $b-red1;
+
+
+    .tab-config {
+
+
+        .btns {
+            display: table-cell;
+
+            padding-left: 1em;
+
+            text-align: left;
+            vertical-align: middle;
+        }
+    }
+
+    .action-header {
+        width: 60px;
+    }
+
+    .price-arrow {
+        line-height: 1em;
+        vertical-align: middle;
+
+        width: 1.2em;
+        display: inline-block;
+
+        &.up {
+            color: $price-up-color;
+        }
+
+        &.down {
+            color: $price-down-color;
+        }
+
+        &.empty {
+            color: transparent;
+        }
+    }
+}

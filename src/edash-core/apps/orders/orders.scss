@@ -1,0 +1,75 @@
+
+
+.orders-page {
+
+    $buy-color: $b-blue6;
+    $sell-color: $b-red1;
+    $extern-color: $b-blue5;
+    
+
+    .top-bar {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        padding-top: 0.3em;
+    }
+
+    .order-cell {
+        font-weight: bold;
+        padding-left: 3px;
+
+        &.order-buy {
+            color: $buy-color;
+        }
+
+        &.order-sell {
+            color: $sell-color;
+        }
+    }
+
+    
+
+    .extern-cell {
+        &.blue {
+            font-weight: bold;
+            color: $extern-color;
+        }
+    }
+}
+
+.external-transaction-dlg {
+    padding: 1em;
+    width: 480px;
+
+    .label {
+        text-align: left;
+    }
+
+    .first-row {
+        margin-bottom: 1em;
+        width: 120px;
+    }
+
+    .second-row {
+        margin-bottom: 1em;
+    }
+
+    .third-row {
+        margin-bottom: 1em;
+
+        .product-wrap {
+            width: 200px;
+        }
+    }
+
+    .fourth-row {
+        text-align: left;
+    }
+}
+
+.order-edit-dlg {
+    padding: 1em;
+
+    .item {
+        padding-bottom: 0.5em;
+    }
+}

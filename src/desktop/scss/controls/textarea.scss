@@ -1,0 +1,17 @@
+
+.textarea-input {
+    textarea {
+        width: 100%;
+        box-sizing: border-box;
+        font-family: inherit;
+    }
+
+    .form-focusable {
+        border: 1px solid $controls-border-color;
+
+        &:focus {
+            outline: none;
+            border: 1px solid $standard-focus;            
+        }
+    }
+}

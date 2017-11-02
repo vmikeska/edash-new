@@ -1,0 +1,79 @@
+
+@import "../main";
+
+//not yet extracted values
+
+.time-control {
+    $borders-focus-color: $b-blue1;
+
+    position: relative;
+    display: inline-block;
+    
+    .value-cont {        
+        background-color: white;
+        
+        padding-left: 0.3em;
+        padding-right: 0.5em;
+
+
+        .tbl {
+            .i {
+                line-height: 2;
+            }
+
+            .ico-cell {
+                width: 1.4em;
+            }
+        }
+        .icon {            
+            line-height: 0.8;
+            @include centerer-vertical;
+            display: inline-block;            
+        }
+
+        .value {
+            
+        }
+
+        &:hover {
+            background-color: $b-blue1;
+            color: white;
+        }
+    }
+
+    .form-focusable {
+        border: 1px solid $b-black2;
+
+        &:focus {
+            outline: none;
+            border: 1px solid $borders-focus-color;
+        }
+    }
+
+    .drop {
+        position: absolute;
+        top: 2.5em;
+        left: 0;
+        z-index: 100;
+
+        @include box-shadow2;
+
+        background-color: white;
+        
+        text-align: center;
+        padding: 0.2em;
+
+        .top-bar {
+            text-align: right;
+            
+            .close {
+                color: $standard-font-color;
+                cursor: pointer;
+
+                &:hover {
+                    color: $standard-focus;
+                }
+            }
+        }
+    }
+}

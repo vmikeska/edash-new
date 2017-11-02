@@ -1,0 +1,22 @@
+<div class="lc-management">
+    <div class="size-fixed menu-bar" data-height="36">
+        <span class="lbtn focus-blue" (click)="addNewClicked()"><span class="button-ico icon-plus"></span> Neuer Lastgang</span>
+    </div>
+
+    <div class="size-dynamic table-parent-cont" data-height="1">
+        <data-table #table
+            [parent]="this" 
+            emptyText="no items created" 
+            [serviceMenuActions]="customActions"
+            (onActionMenuClick)="itemActionClick($event)"             
+            [observableData]="observableData" 
+            (onAfterViewChanged)="onTableDataLoaded()"
+            [headers]="headers" 
+            
+            
+            cellsClass="h-center"
+            headerClass="font-normal h-center"
+            ></data-table>
+
+    </div>
+</div>

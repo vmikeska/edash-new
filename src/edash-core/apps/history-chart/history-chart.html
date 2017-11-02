@@ -1,0 +1,86 @@
+<div class="history-chart">
+
+
+
+
+    <div class="size-fixed" data-height="40">
+        <tabs-menu #tabsComp [items]="tabs" [content]="tabsCont"></tabs-menu>
+        <div #tabsCont class="tabs-menu-content-cont">
+            <div class="tabs-menu-content tiInstruments">
+                <instrument-selection [mainForm]="formsManager.defaultForm" [singleMode]="true" (onSingeSelectionChange)="onInstrumentSelected($event)"></instrument-selection>
+
+            </div>
+
+            <div class="tabs-menu-content tiData">
+
+                <div class="category-title">Chart typ</div>
+
+                <div class="data-section">
+                    <radio-buttons [items]="chartTypes" [horizontal]="true" [form]="dataForm" name="chartType" [formTabIndex]="1"></radio-buttons>
+                </div>
+
+                <div class="category-title">Daten</div>
+
+
+                <div class="data-section">
+                    <span class="lbtn focus-blue" (click)="selectCheckboxes(true)">Select all</span>
+
+                    <span class="lbtn focus-blue" (click)="selectCheckboxes(false)">Unselect all</span>
+                </div>
+
+                <div class="data-section">
+                    <div class="form-horizontal v-borders col3">
+
+                        <div class="form-item">
+                            <div class="cb-line">
+                                <checkbox text="Schlusskurs" [defaultValue]="true" [form]="dataForm" name="close" [formTabIndex]="2"></checkbox>
+                            </div>
+                            <div class="cb-line">
+                                <checkbox text="Ges. Volumen" [form]="dataForm" name="cumqty" [formTabIndex]="3"></checkbox>
+                            </div>
+                            <div class="cb-line">
+                                <checkbox text="MAV 38" [form]="dataForm" name="mav38" [formTabIndex]="4"></checkbox>
+                            </div>
+                            <div class="cb-line">
+                                <checkbox text="MAV 200" [form]="dataForm" name="mav200" [formTabIndex]="5"></checkbox>
+                            </div>
+
+                        </div>
+
+                        <div class="form-item">
+                            <div class="cb-line">
+                                <checkbox text="Anz. Handler" [form]="dataForm" name="trades" [formTabIndex]="6"></checkbox>
+                            </div>
+                            <div class="cb-line">
+                                <checkbox text="Eröffnung" [form]="dataForm" name="open" [formTabIndex]="7"></checkbox>
+                            </div>
+                            <div class="cb-line">
+                                <checkbox text="Hoch" [form]="dataForm" name="high" [formTabIndex]="8"></checkbox>
+                            </div>
+                            <div class="cb-line">
+                                <checkbox text="Tief" [form]="dataForm" name="low" [formTabIndex]="9"></checkbox>
+                            </div>
+                        </div>
+
+                        <div class="form-item">
+                            <div class="cb-line">
+                                <checkbox text="Limit aus Alerts" [form]="dataForm" name="limit" [formTabIndex]="10"></checkbox>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="tabs-menu-content tiConfig">
+                Here will be universal saving config, when it's available
+            </div>
+        </div>
+    </div>
+
+    <div class="size-dynamic" data-height="1">        
+        <stock-chart #chartComponent [parentWin]="parentWin"></stock-chart>
+    </div>
+
+</div>

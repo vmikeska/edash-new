@@ -1,0 +1,17 @@
+
+<div class="market-news">
+
+  <div class="size-fixed" data-height="20"></div>
+
+  <div class="size-dynamic table-parent-cont" data-height="1">
+    <data-table 
+    [headers]="dataHeaders" 
+    [data]="data" 
+    [parent]="this"
+    [serviceMenuActions]="customActions"
+    (onActionMenuClick)="actionClick($event)">
+    
+    </data-table>
+  </div>
+
+</div>

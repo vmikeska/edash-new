@@ -1,0 +1,8 @@
+
+<div class="textarea-input disableable" [ngClass]="{'disabled': !enabled}">
+
+    <div class="disabled-cover"></div>
+
+    <textarea #textarea #focusable class="form-focusable" tabindex="{{tabindex}}" maxLength="{{maxLength}}" placeholder="{{placeholder}}" (input)="onInput()"></textarea>
+
+</div>

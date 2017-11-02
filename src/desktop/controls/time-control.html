@@ -1,0 +1,26 @@
+<div #focusable class="time-control disableable" [ngClass]="{'disabled': !enabled}">
+
+    <div class="disabled-cover"></div>
+
+    <div class="value-cont form-focusable" tabindex="{{tabindex}}" (click)="componentClick()">
+
+        <div class="tbl">
+            <div class="i ico-cell">
+                <span class="icon icon-clock-o"></span>
+            </div>
+            <div class="i">
+                <span class="value">{{this.timeInternal.format('LT')}}</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="opened" class="drop">
+        <div class="top-bar">
+            <span class="close icon-times" (click)="closeClicked()"></span>
+        </div>
+        <number-vertical [value]="hours" [minValue]="0" [maxValue]="23" (valueChange)="hoursChanged($event)"></number-vertical>
+        <number-vertical [value]="minutes" [minValue]="0" [maxValue]="59" (valueChange)="minutesChanged($event)"></number-vertical>
+    </div>
+
+</div>

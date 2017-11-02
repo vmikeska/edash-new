@@ -1,0 +1,21 @@
+
+.window-all {
+    min-height: 480px;
+    @include noselect;
+}
+
+.windows {
+
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+
+    background-color: $main-bck;
+}
+
+.size-dynamic {
+    position: relative;
+}
+

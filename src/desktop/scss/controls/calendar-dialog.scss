@@ -1,0 +1,199 @@
+.calendar-dialog {
+
+    $cal-dlg-day-disabled-color: $b-gray4;
+    $cal-dlg-day-weekend-color: $b-blue5;
+
+    min-height: 340px;
+
+    .tabs-component {
+        display: inline-block;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .date-bar {
+        text-align: center;
+        padding-top: 1em;
+        padding-bottom: 1em;
+
+        .date-value {
+            display: inline-block;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+    }
+
+    .tabs-bar {}
+
+    .contents-wrap {
+        display: inline-block;
+    }
+
+    .contents-tbl {
+        display: table;
+        
+        .arrow-cont {
+            display: table-cell;        
+            vertical-align: middle;
+            width: 3em;
+            
+            .arrow {
+                color: transparent;
+            }
+
+        }
+
+        &.show-arrows {
+            .arrow-cont {            
+                cursor: pointer;
+    
+                .arrow {
+                    font-size: 1.1em;
+                    line-height: 1;
+                    color: $standard-font-color;                    
+                }
+    
+                &:hover {
+                    .arrow {
+                        color: $inverted-font-color;
+                    }
+                    
+                    background-color: $standard-focus;
+                }
+            }   
+        }
+
+        .cont-left {            
+
+            
+        }
+
+        .contents {
+            display: table-cell;
+            width: 230px;
+        }
+
+        .cont-right {            
+        }
+    }
+
+    .days-all {
+        display: inline-block;
+
+        .day {
+            width: 2em;            
+            line-height: 2;
+        }
+
+        .days-title {            
+            .day {
+                display: inline-block;
+                &.weekend {
+                    font-weight: bold;                
+                    color: $cal-dlg-day-weekend-color;    
+                }
+            }
+        }
+
+        .week-row {
+            .day {
+                display: inline-block;
+                cursor: pointer;
+                color: $standard-font-color;
+
+                &.weekend {    
+                    color: $cal-dlg-day-weekend-color;                
+                }
+                
+                &:hover {
+                    color: $inverted-font-color;
+                    background-color: $standard-hover;
+                }
+
+                &.active {
+                    color: $standard-rect-selected-color;
+                    background-color: $standard-rect-selected-bck
+                }
+
+                &.disabled {                                    
+                    color: $cal-dlg-day-disabled-color;
+                    pointer-events: none;
+                    cursor: not-allowed;
+
+                    //todo: check if works
+                    &:hover {
+                        color: $standard-font-color;
+                        background-color: inherit;
+                    }
+                }
+            }
+        }
+    }
+
+    .months-all {
+        .row {
+
+            .month {
+                display: inline-block;
+                line-height: 4;
+                width: 4em;
+                cursor: pointer;
+
+                &.active {
+                    color: $standard-rect-selected-color;
+                    background-color: $standard-rect-selected-bck
+                }
+
+                &:hover {
+                    color: $inverted-font-color;
+                    background-color: $standard-hover;
+                }
+
+                &.disabled {                    
+                    color: $cal-dlg-day-disabled-color;
+                    pointer-events: none;
+                    cursor: not-allowed;
+
+                    //todo: check if works
+                    &:hover {
+                        color: $standard-font-color;
+                        background-color: inherit;
+                    }
+                }
+            }
+        } 
+    } 
+
+    .years-all { 
+        .row {
+            .year {
+                display: inline-block;
+                line-height: 4;
+                width: 4em;
+                cursor: pointer;
+
+                &:hover {
+                    color: $inverted-font-color;
+                    background-color: $standard-hover;
+                }
+
+                &.active {
+                    color: $standard-rect-selected-color;
+                    background-color: $standard-rect-selected-bck;
+                }
+
+                &.disabled {                    
+                    pointer-events: none;
+                    color: $cal-dlg-day-disabled-color;
+                    cursor: not-allowed;
+
+                    //todo: check if works
+                    &:hover {
+                        color: $standard-font-color;
+                        background-color: inherit;
+                    }
+                }
+            }
+        }  
+    }
+}

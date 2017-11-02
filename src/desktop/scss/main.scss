@@ -1,0 +1,224 @@
+@import "../../config/colors.scss";
+
+
+
+@keyframes opacity-animation {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+[class*=" icon-"]:before {
+    //vertical-align: middle;
+    //line-height: unset;
+    line-height: 1;
+}
+
+@mixin noselect() {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@mixin centerer() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin centerer-vertical() {
+    position: absolute;
+    top: 50%;    
+    transform: translate(0, -50%);
+}
+
+
+@mixin box-shadow() {
+    box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+@mixin box-shadow2() {
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+body {
+
+    font-size: 14px;
+
+    font-family: "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+
+    color: $standard-font-color;
+
+    min-width: 480px;
+
+    overflow: hidden;
+}
+
+input[type="text"],
+input[type="password"] {
+    line-height: 2em;
+    border: 1px solid $b-gray1;
+    padding-left: 1em;
+    padding-right: 1em;
+
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.font-normal {
+    font-weight: normal;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.noselect {
+    @include noselect;
+}
+
+.lbtn {
+    display: inline-block;
+
+    line-height: 2;
+
+    font-size: 15px;
+
+    padding-left: 1em;
+    padding-right: 1em;
+
+    cursor: pointer;
+
+
+    vertical-align: middle;
+
+    .button-ico {
+        display: inline-block;
+        vertical-align: middle;
+
+        line-height: 1;
+        font-size: 17px;
+        margin-right: 3px;
+    }
+}
+
+.focus-blue {
+    background-color: $b-gray3;
+    color: white;
+
+    &:hover {
+        background-color: $b-blue1;
+    }
+}
+
+.focus-green {
+    background-color: $b-gray3;
+    color: white;
+
+    &:hover {
+        background-color: $b-green1;
+    }
+}
+
+.no-decoration {
+    text-decoration: none;
+}
+
+
+
+.tbl {
+    display: table;
+    width: 100%;
+
+    .i {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .w50 {
+        width: 50%;
+    }
+
+    .l {
+        text-align: left;
+    }
+
+    .r {
+        text-align: right;
+    }
+
+    .c {
+        text-align: center;
+    }
+}
+
+.v-top {
+    vertical-align: top;
+}
+
+.v-center {
+    vertical-align: middle;
+}
+
+.v-bottom {
+    vertical-align: bottom;
+}
+
+.h-left {
+    text-align: left;
+}
+
+.h-center {
+    text-align: center;
+}
+
+.h-right {
+    text-align: right;
+}
+
+.disableable {
+    position: relative;
+
+    .disabled-cover {
+        display: none;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+        z-index: 99;
+        background-color: rgba(black, 0.5);
+    }
+
+    &.disabled {
+        pointer-events: none;
+        
+        .disabled-cover {
+            display: block;            
+        }
+    }
+}

@@ -1,0 +1,20 @@
+<div class="real-time-chart">
+
+      <div class="size-fixed" data-height="40">
+            <tabs-menu #tabsComp [items]="tabs" [content]="tabsCont"></tabs-menu>
+            <div #tabsCont class="tabs-menu-content-cont">
+                  <div class="tabs-menu-content tiInstruments">
+                        <instrument-selection [mainForm]="formsManager.defaultForm" [singleMode]="true" (onSingeSelectionChange)="onInstrumentSelected($event)"></instrument-selection>
+                  </div>
+
+                  <div class="tabs-menu-content tiConfig">
+                        Here will be universal saving config, when it's available
+                  </div>
+            </div>
+      </div>
+
+      <div #chartCont class="size-dynamic" data-height="1">
+            <stock-chart #chartComponent [parentWin]="this.parentWin"></stock-chart>            
+      </div>
+
+</div>

@@ -1,0 +1,25 @@
+
+
+
+<div #focusable
+  class="list-box form-focusable"   
+  tabindex="{{tabindex}}"
+  [style.height.px]="totalHeight"
+  >
+
+  <div 
+    *ngFor="let i of items" 
+    class="item" 
+    [ngClass]="getCurrentItemClass(i)"
+    [attr.data-val]="i.value"     
+    [style.lineHeight]="lineHeight"
+    (click)="itemClicked(i)"
+
+    >
+
+      <div>{{i.text}}</div>
+
+    </div>
+
+</div>
+

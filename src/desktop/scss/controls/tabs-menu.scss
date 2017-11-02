@@ -1,0 +1,91 @@
+@import "../main";
+
+.tabs-menu-component {
+    position: relative;
+    border: 1px solid inherit;
+
+
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: 0.5em;
+    padding-right: 2em;
+
+    .item {
+        display: inline-block;
+
+        color: $inverted-font-color;
+        background-color: $tabs-menu-btn-bck;
+
+        padding: 0.5em;
+        padding-left: 1em;
+        padding-right: 1em;
+
+        margin-right: 6px;
+        margin-left: 2px;
+
+        cursor: pointer;
+
+        &:hover {            
+            background-color: $standard-hover;
+        }
+
+        &.active {            
+            background-color: $tabs-menu-btn-bck-active;
+            @include box-shadow2;
+        }
+
+    }
+}
+
+.tabs-menu-content-cont {
+    position: relative;
+    z-index: 100;
+
+    background-color: $tabs-menu-popup-bck-color;
+
+    position: absolute;
+    top: 2.7em;
+    left: 0;
+    right: 0;
+        
+    min-height: 190px;
+
+    max-width: 600px;
+
+    margin-left: 5px;
+    margin-right: 5px;
+
+    border: 1px solid $tabs-menu-popup-border-color;    
+    @include box-shadow2;
+
+    .tabs-menu-content {
+        display: none;
+
+        $pd: 5px;
+
+        padding-left: $pd;
+        padding-right: $pd;
+        padding-bottom: $pd;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    .svc-line {
+        text-align: right;
+
+        padding: 3px;
+        padding-bottom: 0;
+        
+        .close {
+            font-size: 1.1em;
+            color: $tabs-menu-popup-close-btn-color;
+            cursor: pointer;
+
+            &:hover {
+                color: $standard-hover;
+            }
+        }
+    }
+}

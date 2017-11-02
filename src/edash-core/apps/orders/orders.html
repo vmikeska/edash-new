@@ -1,0 +1,39 @@
+<div class="orders-page">
+
+  <div class="size-fixed top-bar" data-height="40">
+
+    <div class="tbl">
+      <div class="i w50 l">
+
+        <label> 
+          <input type="radio" name="orderType" (change)="handleChange(true)" checked />
+          <span>Aktive Orders</span>
+        </label>
+
+        <label>
+          <input type="radio" name="orderType" (change)="handleChange(false)" />
+          <span>Inaktive Orders</span>
+        </label>
+
+      </div>
+      <div class="i w50 r">
+        <span class="lbtn focus-blue" (click)="extTransClick()"><span class="button-ico icon-plus"></span> Add ext. transaction
+        </span>
+        <span class="lbtn focus-blue" (click)="exportClick()"><span class="button-ico icon-page-export"></span> Export
+        </span>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="size-dynamic table-parent-cont" data-height="1">
+
+    <orders-active-table [parent]="this" [ngClass]="{'hidden': !displayingActive}"></orders-active-table>
+    <orders-inactive-table [parent]="this" [ngClass]="{'hidden': displayingActive}"></orders-inactive-table>
+
+  </div>
+
+
+
+</div> 

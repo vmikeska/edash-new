@@ -1,0 +1,12 @@
+<div class="tabs-component">
+
+    <ng-container *ngIf="collapsable">
+
+        <span *ngIf="collapsed" class="collapsable icon-chevron-down" (click)="changeCollapsed()"></span>
+        <span *ngIf="!collapsed" class="collapsable icon-chevron-up" (click)="changeCollapsed()"></span>
+
+    </ng-container>
+
+    <span class="item" *ngFor="let item of items" [ngClass]="{'active': item.active}" (click)="tabClicked(item)">{{item.name}}</span>
+
+</div>

@@ -1,0 +1,5 @@
+<div class="wizard">
+    
+    <span *ngFor="let s of visibleSteps" class="step" [ngClass]="{'active': s === activeStep, 'disabled': s.disabled}" (click)="stepClick(s)">{{getTabText(s)}}</span>
+    
+</div>

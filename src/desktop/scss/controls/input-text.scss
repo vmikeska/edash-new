@@ -1,0 +1,19 @@
+
+.input-text {
+    input {
+        width: 100%;
+        box-sizing: border-box;
+        font-family: inherit;
+        line-height: 2;
+        padding-left: 0.5em;
+    }
+
+    .form-focusable {
+        border: 1px solid $controls-border-color;
+
+        &:focus {
+            outline: none;
+            border: 1px solid $standard-focus;            
+        }
+    }
+}

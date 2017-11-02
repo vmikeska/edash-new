@@ -1,0 +1,45 @@
+@import "../main";
+
+.switch {
+    $switch-on-color: $b-green1;
+    $switch-off-color: $b-red1;
+    
+    $total-width: 100px;
+    $status-width: 50px;
+    
+    $height: 2em;
+
+    position: relative;
+    background-color: $switch-bck-color;
+
+    display: inline-block;
+
+    width: $total-width;
+    height: $height;
+
+    cursor: pointer;
+
+    .status {
+        position: absolute;
+
+        top: 0;
+        left: calc(100% - #{$status-width});
+
+        background-color: $switch-off-color;
+        color: $inverted-font-color;
+
+        text-align: center;
+        font-weight: bold;
+
+        width: $status-width;
+        line-height: $height;
+    }
+
+    &.on {
+        .status {
+            background-color: $switch-on-color;
+            left: 0;
+        }
+    }
+
+}

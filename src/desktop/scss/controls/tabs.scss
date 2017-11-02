@@ -1,0 +1,64 @@
+@import "../main";
+
+.tabs-component {
+    position: relative;
+    border: 1px solid inherit;
+
+
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: 0.5em;
+    padding-right: 2em;
+
+    .item {
+        display: inline-block;
+
+        color: $inverted-font-color;
+        background-color: $tabs-btn-bck;
+
+        padding: 6px;
+        padding-left: 1em;
+        padding-right: 1em;
+
+        margin-right: 2px;
+        margin-left: 2px;
+
+        cursor: pointer;
+
+        &.active {
+            background-color: $tabs-btn-bck-active;
+        }
+
+        &:hover {
+            background-color: $standard-hover;
+        }
+    }
+
+    .collapsable {
+        cursor: pointer;
+        color: $standard-font-color;
+
+        font-size: 1.2em;
+
+        line-height: 2em;
+        vertical-align: middle;
+
+        position: absolute;
+        top: 0;
+        right: 0.5em;
+
+        &:hover {
+            color: $standard-hover;
+        }
+    }
+}
+
+.tabs-content {
+    display: none;
+
+    padding: 0.5em;
+
+    &.active {
+        display: block;
+    }
+}

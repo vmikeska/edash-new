@@ -1,0 +1,44 @@
+@import "../main";
+
+.list-box {
+    display: block;
+
+    background-color: $controls-list-bck;
+  
+    width: 100%;
+
+    overflow-y: auto;
+
+    .item {
+        display: block;
+        width: 100%;
+
+        box-sizing: border-box;
+        cursor: pointer; 
+        padding-left: 0.3em;
+
+        &:hover {
+            background-color: $standard-rect-hover-bck;
+            color: $standard-rect-hover-color;
+        }
+
+        &.selected {
+            background-color: $standard-rect-selected-bck;
+            color: $standard-rect-selected-color;
+        }
+
+        &.active {
+            background-color: $standard-rect-hover-bck;
+            color: $standard-rect-hover-color;
+        }
+    }
+
+    &.form-focusable {
+        border: 1px solid $controls-border-color;
+
+        &:focus {
+            outline: none;
+            border: 1px solid $standard-focus;            
+        }
+    }
+}

@@ -1,0 +1,81 @@
+<div class="sell-form">
+
+    <div class="block">
+        <div class="title">Produktstammdaten:</div>
+        <div class="row">
+            <div class="l">Handelspartner:</div>
+            <div class="r">{{instrument.exchName}}</div>
+        </div>
+        <div class="row">
+            <div class="l">VHP:</div>
+            <div class="r">{{instrument.segmentKey}}</div>
+        </div>
+        <div class="row">
+            <div class="l">Produkt:</div>
+            <div class="r">{{instrument.symbol}}</div>
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="title">Aktueller Quote:</div>
+        <div class="row">
+            <div class="l">Verkaufpreis €/MWh</div>
+            <div class="r">Kaufpreis €/MWh</div>
+        </div>
+        <div class="row">
+            <div class="l red">
+                <span class="flash-cont">
+                    {{instrument.bid_price | number : '2.3-3'}}
+                    <span *ngIf="bidFlash" class="cell-flash"></span>
+                </span>
+            </div>
+            <div class="r blue flash-cont">
+                <span class="flash-cont">
+                    {{instrument.ask_price | number : '2.3-3'}}
+                    <span *ngIf="askFlash" class="cell-flash"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="title">Orderdaten:</div>
+        <div class="row">
+            <div class="l">Ordertyp:</div>
+            <div class="r">{{type}}</div>
+        </div>
+        <div class="row">
+            <div class="l">Orderwert in €:</div>
+            <div class="r">{{quantity * price * instrument.deliveryHours | number : '2.2-2'}}</div>
+
+        </div>
+        <div class="row">
+            <div class="l">Good-till-cancelled:</div>
+            <div class="r"><input [checked]="goodTillCanceled" (change)="gtcChange($event)" type="checkbox" /></div>
+        </div>
+        <div class="row">
+            <div class="l">Gültigkeit:</div>
+            <div class="r">
+                <calendar-modal [defaultValue]="expires" [enabled]="!goodTillCanceled"></calendar-modal>
+                <time-control [defaultValue]="expires" [enabled]="!goodTillCanceled"></time-control>
+            </div>
+        </div>
+        <div class="row">
+            <div class="l">MW:</div>
+            <div class="r">
+                <!-- todo: fix value binding, after change to defaultValue -->
+                <input-number [defaultValue]="quantity" [minValue]="instrument.minAmount" [maxValue]="instrument.maxAmount" [decimals]="3" [maxNumbers]="3"
+                    (valueChange)="quantityOrPriceChange()"></input-number>
+            </div>
+        </div>
+        <div class="row">
+            <div class="l">Limit in €/MWh:</div>
+            <div class="r">
+                <!-- todo: fix value binding, after change to defaultValue -->
+                <input-number [defaultValue]="price" [minValue]="0.01" [decimals]="2" [maxNumbers]="3" (valueChange)="quantityOrPriceChange()"></input-number>
+            </div>
+        </div>
+
+    </div>
+
+</div>

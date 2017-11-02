@@ -1,0 +1,116 @@
+
+$b-black1: #1C1C1C;
+$b-black2: #252525;
+
+$b-green1: #7FBA00;
+
+$b-white1: #F1F1F8;
+
+$b-gray1: #3D3D3D;
+$b-gray2: #BBBBBB;
+$b-gray3: #444444;
+$b-gray4: #758393;
+$b-gray5: #eeeeee;
+
+$b-blue1: #55B3FF;
+$b-blue2: #E5F8FD;
+$b-blue3: #BFEEFC;
+$b-blue4: #00BCF2;
+$b-blue5: #0058AD;
+$b-blue6: #0072C6;
+$b-blue7: #215B7D;
+
+$b-red1: #C60000;
+
+
+//master values
+
+
+
+//all major values
+$main-bck: $b-white1;
+
+$resizing-grid-line-color: white;
+$resizing-grid-rect-color: $b-gray4;
+$resizing-grid-rect-high-color: $b-blue4;
+
+$standard-font-color: $b-gray3;
+$inverted-font-color: white;
+
+$controls-border-color: $b-black2;
+$controls-bck: white;
+$controls-list-bck: $b-white1;
+
+$link-color: $b-blue6;
+
+$standard-hover: $b-blue1;
+$standard-focus: $b-blue1;
+
+$standard-rect-hover-bck: $b-blue1;
+$standard-rect-hover-color: white;
+
+$standard-rect-selected-bck: $b-black2;
+$standard-rect-selected-color: white;
+
+$win-bck: $b-white1;
+$win-bar-bck: $b-black2;
+$win-bar-color: white;
+
+$dashboard-content-bck: white;
+$dashboard-content-panel-bck: $b-black1;
+$dashboard-content-panel-spliter-color: $b-gray3;
+$dashboard-content-header-underline: $b-gray2;
+
+$dashboard-content-header-link-color: $b-blue5;
+$dashboard-content-header-link-hover-color: white;
+$dashboard-content-header-link-hover-bck: $b-blue1;
+
+
+$dashboard-menu-bck: $b-black1;
+
+$dashboard-menu-item-color: white;
+$dashboard-menu-item-notif-bck: $b-blue4;
+$dashboard-menu-item-notif-color: white;
+$dashboard-menu-item-preloader: $b-blue4;
+$dashboard-menu-item-hover-bck: $b-gray1;
+
+$apps-menu-item-font-color: inherit;
+$apps-menu-item-hover-bck: $b-blue2;
+$apps-menu-item-underline: $b-gray2;
+
+$opened-apps-item-hover-color:  white;
+$opened-apps-item-hover-bck: $b-gray1;
+$opened-apps-item-frame-color: $b-gray1;
+
+
+$table-header-bck: $b-gray3;
+$table-header-color: white;
+$table-header-splitter-color: white;
+
+$table-row-bck: white;
+$table-row-color: inherit;
+$table-row-even-bck: $b-gray5;
+$table-row-even-color: inherit;
+
+$table-header-sort-btn-bck: $b-gray4;
+$table-service-bar-bck: $b-gray3;
+$table-no-items-bck: $b-gray2;
+$table-col-filter-btn-bck: $b-gray4;
+
+$input-number-btns-bck: $b-black2;
+
+$list-button-btn-color: $b-gray1;
+
+$list-button-selected-color: $b-green1;
+$list-button-unselected-color: $standard-font-color;
+
+$switch-bck-color: $b-black1;
+
+$tabs-menu-popup-close-btn-color: $b-gray1;
+$tabs-menu-popup-border-color: $b-gray2;
+$tabs-menu-popup-bck-color: white;
+$tabs-menu-btn-bck: $b-gray2;
+$tabs-menu-btn-bck-active: $b-black2;
+
+$tabs-btn-bck: $b-gray2;
+$tabs-btn-bck-active: $b-black2;

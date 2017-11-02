@@ -1,0 +1,43 @@
+<div class="order-edit-dlg">
+
+    <div class="tbl item">
+        <div class="i l w50 label">Good-till-canceled</div>
+        <div class="i r w50">
+            <checkbox [form]="mainForm" [defaultValue]="goodTillCancelled" name="goodTillCancelled" [formTabIndex]="1"></checkbox>
+        </div>
+
+    </div>
+
+    <div class="tbl item">
+        <div class="i l w50 label">Gültigkeit datum</div>
+        <div class="i r w50">
+            <calendar-modal [form]="mainForm" [defaultValue]="model.o_expires" [enabled]="!goodTillCancelled" name="date" [formTabIndex]="2"></calendar-modal>            
+        </div>
+
+    </div>
+
+    <div class="tbl item">
+        <div class="i l w50 label">Gültigkeit zeit</div>
+        <div class="i r w50">            
+            <time-control [form]="mainForm" [defaultValue]="model.o_expires" [enabled]="!goodTillCancelled" name="time" [formTabIndex]="3"></time-control>
+        </div>
+
+    </div>
+
+    <div class="tbl item">
+        <div class="i l w50 label">Limit</div>
+        <div class="i r w50">
+            <input-number [defaultValue]="price" [form]="mainForm" [enabled]="limitEnabled" name="limit" [formTabIndex]="4"></input-number>
+        </div>
+
+    </div>
+
+    <div class="tbl item">
+        <div class="i l w50 label">Qty</div>
+        <div class="i r w50">
+            <input-number [defaultValue]="qty" [form]="mainForm" name="qty" [formTabIndex]="5"></input-number>
+        </div>
+
+    </div>
+
+</div>

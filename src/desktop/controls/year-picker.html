@@ -1,0 +1,14 @@
+
+
+
+<div class="year-picker">
+
+    <span class="btn" (click)="btnClicked()">Auswählen ganz Jahr</span>
+
+    <div class="years" *ngIf="isVisible">
+
+        <div *ngFor="let y of years" class="year" (click)="yearClicked(y)">{{y}}</div>
+
+    </div>
+
+</div>

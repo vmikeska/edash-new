@@ -1,0 +1,11 @@
+
+<div class="alert-popup">
+    <div>
+        <stock-chart #chartComponent></stock-chart>
+    </div>
+
+    <div *ngIf="this.alert.remarks" class="remark">
+        <span class="label">Remark: </span>
+        <span class="txt">{{this.alert.remarks}}</span>
+    </div>
+</div>

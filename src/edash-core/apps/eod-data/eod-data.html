@@ -1,0 +1,55 @@
+<div class="eod-data">
+
+    <div class="size-fixed" data-height="40">
+
+        <div class="tbl menu-tbl">
+            <div class="i w50 l">
+                <tabs-menu #tabsComp [items]="tabs" [content]="tabsCont"></tabs-menu>
+            </div>
+            <div class="i w50 r">
+                <span *ngIf="selectedInstrument" class="lbtn focus-blue" (click)="exporBtnClick()"><span class="button-ico icon-page-export"></span> Export</span>
+            </div>
+        </div>
+
+        <div #tabsCont class="tabs-menu-content-cont">
+
+            <div class="tabs-menu-content tiInstruments">
+
+                <div class="inst-tbl">
+
+                    <div class="left">
+                        <instrument-selection [mainForm]="formsManager.defaultForm" [singleMode]="true" (onSingeSelectionChange)="onInstrumentSelected($event)"></instrument-selection>
+                    </div>
+
+                    <div class="right">
+                        <div class="calendar-split">
+                            <calendar-modal [form]="formsManager.defaultForm" name="dateFrom" [formTabIndex]="5"></calendar-modal>
+                        </div>
+
+                        <div class="calendar-split">
+                            <calendar-modal [form]="formsManager.defaultForm" name="dateTo" [formTabIndex]="6"></calendar-modal>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="tabs-menu-content tiUnits">
+                <div>Preise in €/MWh</div>
+                <div>Mengen in MWh</div>
+                <div>Leistung in MW</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="size-dynamic table-parent-cont" data-height="1">
+
+        <data-table #table emptyText="no instrument selected" [observableData]="observableData" [headers]="headers" [columnsFilter]="true"
+            headerClass="h-center" cellsClass="h-center" [parent]="this">
+        </data-table>
+
+    </div>
+
+</div>

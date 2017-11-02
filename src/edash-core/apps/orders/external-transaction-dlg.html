@@ -1,0 +1,66 @@
+<div class="external-transaction-dlg">
+
+    <div class="first-row">
+        <div class="label">Seite</div>
+        <combo-box [items]="seiteItems" [form]="defaultForm" name="buy" [formTabIndex]="1"></combo-box>
+    </div>
+
+    <div class="second-row form-horizontal v-borders col3">
+
+        <div class="form-item">
+            <div class="label">Handelspartner</div>
+            <combo-box mapping="exchange.name,exchange.id" [dataObservable]="otcExchangesObservable" (selectedItemChange)="onPartnerSelected($event)" [form]="defaultForm"
+                name="exchange" [formTabIndex]="2"></combo-box>
+        </div>
+
+        <div class="form-item">
+            <div class="label">VHP</div>
+            <combo-box mapping="name,name" [dataObservable]="vtps" (selectedItemChange)="onVtpsSelected($event)" [form]="defaultForm" name="vtp"
+                [formTabIndex]="3"></combo-box>
+        </div>
+
+        <div class="form-item">
+
+            <div [ngClass]="{'hidden': !fourSelection}">
+                <div class="label">Type</div>
+                <combo-box mapping="name,name" [dataObservable]="loadPeriods" (selectedItemChange)="onTypeSelected($event)" [form]="defaultForm" name="loadPeriod"
+                    [formTabIndex]="4"></combo-box>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="third-row">
+        <div class="product-wrap">
+            <div class="label">Product</div>
+            <combo-box mapping="symbol,id" [dataObservable]="instruments" [form]="defaultForm" name="instrument" [formTabIndex]="5"></combo-box>
+        </div>
+    </div>
+
+    <div class="fourth-row form-horizontal v-borders col3">
+
+        <div class="form-item">
+            <div class="label">Quantity</div>
+            <input-number [minValue]="0.001" [maxValue]="99" [decimals]="3" [form]="defaultForm" name="quantity" [formTabIndex]="6"></input-number>
+        </div>
+
+        <div class="form-item">
+            <div class="label">Price</div>
+            <input-number [minValue]="0.01" [maxValue]="999" [decimals]="2" [form]="defaultForm" name="price" [formTabIndex]="7"></input-number>
+        </div>
+
+        <div class="form-item">
+            <div class="label">Handelszeit</div>
+            <calendar-modal [form]="defaultForm" name="date" [formTabIndex]="8"></calendar-modal>
+        </div>
+
+        <div class="form-item">
+
+        </div>
+
+
+    </div>
+
+
+</div>

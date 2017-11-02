@@ -1,0 +1,28 @@
+
+@import "../main";
+
+.number-vertical {
+    display: inline-block;
+    text-align: center;
+
+    .arrow-cont {
+        cursor: pointer;
+
+        .ico {
+            // padding: 1em;
+        }
+
+        &:hover {
+            background-color: $b-black2;
+            color: white;
+        }
+    }
+
+    .num-cont {
+        input {
+            text-align: center;
+            width: 2em;
+            padding: 0;
+        }
+    }
+}

@@ -1,0 +1,4 @@
+
+<div #focusable class="form-button form-focusable" [ngClass]="{'no-focus': tabindex === -1}" tabindex="{{tabindex}}" (keydown)="onKeyDown($event)">
+    <span class="lbtn" [ngClass]="cls" (click)="onClick()">{{text}}</span>
+</div>

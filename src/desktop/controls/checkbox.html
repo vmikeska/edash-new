@@ -1,0 +1,9 @@
+<div class="checkbox" (click)="onClick()">
+    <div #focusable class="checker form-focusable disableable" [ngClass]="{'disabled': !enabled}" tabindex="{{tabindex}}" (keydown)="keyDown($event)">
+        <div class="disabled-cover"></div>
+
+        <span *ngIf="!checked" class="unchecked"></span>
+        <span *ngIf="checked" class="checked icon-check"></span>
+    </div>
+    <span *ngIf="text" class="label">{{text}}</span>
+</div>

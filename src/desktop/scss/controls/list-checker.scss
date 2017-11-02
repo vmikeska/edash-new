@@ -1,0 +1,63 @@
+@import "../main";
+
+.list-checker {
+    overflow-y: auto;
+    background-color: $controls-list-bck;
+
+    .item {
+        cursor: pointer;
+
+        .btbl {
+            display: table;
+            width: 100%;
+
+            .left {
+                display: table-cell;
+                padding-left: 3px;
+
+                .select-btn {
+                    font-size: 1em;
+                    margin-right: 0.2em;
+
+                    &.selected {
+                        color: $list-button-selected-color;
+                    }
+
+                    &.unselected {
+                        color: $list-button-unselected-color;
+                    }
+                }
+            }
+
+            .right {
+                display: table-cell;
+                width: 98%;
+                vertical-align: middle;
+                white-space: nowrap;
+
+                padding-left: 2px;
+
+                .txt {
+                    display: inline-block;
+                    width: 100%;
+                }
+            }
+        }
+
+        &.active {
+            .txt {
+                background-color: $standard-rect-hover-bck;
+                color: $standard-rect-hover-color;
+            }
+        }
+    }
+
+    &.form-focusable {
+        border: 1px solid transparent;
+
+        &:focus {
+            outline: none;
+            border: 1px solid $standard-focus;
+        }
+    }
+}

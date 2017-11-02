@@ -1,0 +1,107 @@
+<div class="table-wrap" #tableWrap>
+
+  <span *ngIf="columnsFilter" class="col-filter-btn" (click)="filterClick()">
+    <span class="ico icon-filter"></span>
+  </span>
+
+  <div #tableCont class="table-cont" [ngClass]="{'has-cols-filter': columnsFilter}">
+
+    <table #table cellspacing="0" cellpadding="0" class="value-table">
+
+      <tr class="header">
+
+        <th *ngIf="serviceMenuActions.length > 0" class="action-header" [ngClass]="headerClass">{{serviceMenuTitle}}</th>
+
+        <ng-container *ngFor="let h of headers; let f = first">
+          <th *ngIf="h.visible && !h.hidden" [ngClass]="h.headerClass + ' ' + headerClass" (click)="headerClicked(h)" [attr.title]="h.headerTitle">
+            <!--[style.padding.em]="itemPadding"-->
+
+
+            <span>{{h.name}}</span>
+
+
+            <span *ngIf="!h.hideSortButton" class="sort-btn" (click)="sortBtnClick(h)" [title]="sortedAsc ? 'order asc': 'order desc'">
+                <span class="ico " [ngClass]="(sortedAsc) && h === sortedColumn ? 'icon-chevron-up' : 'icon-chevron-down'"></span>
+            </span>
+
+          </th>
+        </ng-container>
+
+
+      </tr>
+
+      <tr class="data-row" *ngFor="let row of pageData">
+
+        <td class="action-col" *ngIf="serviceMenuActions.length > 0" [ngClass]="actionColClass">
+
+          <ng-container *ngFor="let action of serviceMenuActions">
+            <span *ngIf="!action.setVisibility || action.setVisibility(row)" class="item" [ngClass]="action.icon" title="{{action.text}}"
+              (click)="actionClicked(action.action, row)"></span>
+          </ng-container>
+
+        </td>
+
+        <ng-container *ngFor="let cc of row.items">
+
+          <!-- [style.padding.em]="itemPadding"  -->
+
+          <td *ngIf="getHeaderColByName(cc.col).visible && !getHeaderColByName(cc.col).hidden" [ngClass]="getHeaderColByName(cc.col).cellClass + ' ' + cellsClass"
+            (dblclick)="cellDoubleClick(row, cc, $event)">
+
+            <span *ngIf="cc.beforeTextStyle" [ngClass]="cc.beforeTextStyle"></span>
+
+            <ng-container *ngIf="(getHeaderColByName(cc.col).type === DataColumnType.TypeCheckbox); else textBlocks">
+              <checkbox [defaultValue]="cc.value" (onChange)="onCheckboxChangeHandler($event, row, cc.col)"></checkbox>
+            </ng-container>
+
+            <ng-template #textBlocks>                
+                <span *ngIf="getHeaderColByName(cc.col).customCellDrawing" [innerHTML]="getHeaderColByName(cc.col).customCellDrawing(cc.value, cc.disVal)"></span>
+                <span *ngIf="!getHeaderColByName(cc.col).customCellDrawing" [innerHTML]="cc.disVal"></span>              
+            </ng-template>
+
+            
+
+
+            <span *ngIf="cc.afterTextStyle" [ngClass]="cc.afterTextStyle"></span>
+
+            <span *ngIf="cc.flashing" class="cell-flash"></span>
+          </td>
+
+        </ng-container>
+
+      </tr>
+
+    </table>
+
+  </div>
+
+
+  <div *ngIf="paging.showPaging" class="service-area">
+
+    <span class="paging">
+      <span (click)="pageChangeClick(-1)" class="dir left icon-left-dir"></span>
+    <span class="page">{{paging.pageNo}}/{{paging.maxPageNo}}</span>
+    <span (click)="pageChangeClick(1)" class="dir right icon-right-dir"></span>
+    </span>
+
+  </div>
+
+
+  <div *ngIf="columnsFilter && columnsFilterOpened" class="columns-filter-all">
+    <div class="title">Columns filter</div>
+    <div class="cont">
+      <label *ngFor="let col of headers">
+      <input type="checkbox" [(ngModel)]="col.visible" />
+      <span>{{col.name}}</span>
+    </label>
+    </div>
+  </div>
+
+  <div *ngIf="(viewData.length === 0) && (emptyText !== '')" class="no-items">
+    <div class="ctbl">
+      <div class="cell">{{emptyText}}</div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,89 @@
+@import "../main";
+
+.list-button {
+    $edit-confirm-btn: $b-green1;
+    $edit-cancel-btn: $b-red1;
+
+    overflow-y: auto;
+    background-color: $controls-list-bck;    
+
+
+    .item {
+        padding-left: 0.3em;
+        padding-right: 0.1em;
+
+        .btbl {
+            display: table;
+            width: 100%;
+
+            .txt-cont {
+                display: table-cell;
+                width: 98%;
+                vertical-align: middle;
+                white-space: nowrap;                
+
+                .edit-btn, .edit-save-btn, .edit-cancel-btn {
+                    cursor: pointer;
+                    vertical-align: middle;
+
+                    &:hover {
+                        color: $standard-hover;
+                    }
+                }
+
+                .edit-save-btn {
+                    color: $edit-confirm-btn;
+                } 
+                
+                .edit-cancel-btn {
+                    color: $edit-cancel-btn;
+                    margin-right: 0.5em;
+                }
+
+                .txt {
+
+                    &.clickable {
+                        cursor: pointer;
+                        text-decoration: underline;
+                        color: $link-color;
+                    }
+                }
+            }
+
+            .btns {
+                display: table-cell;
+                text-align: right;
+                vertical-align: middle;
+                white-space: nowrap;
+
+                .btn {
+                    display: inline-block;
+                    padding: 2px;
+                    margin: 1px;
+
+                    line-height: 0.8;
+
+                    cursor: pointer;
+
+                    text-align: center;
+                    vertical-align: middle;
+
+                    background-color: $list-button-btn-color;
+
+                    .ico {
+                        display: inline-block;
+                        color: white;
+
+                        font-size: 1.2em;
+                    }
+
+                    &:hover {                        
+                        .ico {
+                            color: $standard-hover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

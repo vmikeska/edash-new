@@ -1,0 +1,46 @@
+
+  <div #win
+  [ngClass]="{'hidden': (!visible && !visibleTemp)}" 
+  [id]="id" 
+  [style.zIndex]="zIndex" 
+  class="win-all" 
+  [style.width.px]="width" 
+  [style.height.px]="height" 
+  [style.left.px]="left" 
+  [style.top.px]="top" 
+  (mousedown)="winMouseDown($event)">
+
+
+    <div class="bar" (mousedown)="mouseDown($event)">
+      {{title}}
+
+      <span class="close-icon-cont" (mousedown)="close($event)">
+        <span class="win-close icon-times"></span>
+      </span>
+
+      <span class="min-icon-cont" (mousedown)="minimize($event)">
+        <span class="win-min icon-chevron-down"></span>
+      </span>
+
+
+
+
+    </div>
+
+
+    <div class="content">
+      <div #content></div>
+    </div>
+
+
+    <div class="resizer resizer-right" (mousedown)="resizerStart($event, true, false, 1, null)"></div>
+    <div class="resizer resizer-left" (mousedown)="resizerStart($event, true, false, 0, null)"></div>
+
+    <div class="resizer resizer-top" (mousedown)="resizerStart($event, false, true, null, 0)"></div>
+    <div class="resizer resizer-bottom" (mousedown)="resizerStart($event, false, true, null, 1)"></div>
+    
+    <div class="resizer resizer-right-bottom-corner" (mousedown)="resizerStart($event, true, true, 1, 1)"></div>
+    <div class="resizer resizer-right-top-corner" (mousedown)="resizerStart($event, true, true, 1, 0)"></div>
+    <div class="resizer resizer-left-top-corner" (mousedown)="resizerStart($event, true, true, 0, 0)"></div>
+    <div class="resizer resizer-left-bottom-corner" (mousedown)="resizerStart($event, true, true, 0, 1)"></div>
+  </div>

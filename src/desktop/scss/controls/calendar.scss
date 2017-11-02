@@ -1,0 +1,211 @@
+@import "../main";
+
+.cal-wrap {
+
+    $input-color: interit;
+    $input-bck: white;
+
+    
+    $arrow-color: $b-gray1;
+    $arrow-hover-color: $b-blue1;
+    
+    $cal-margin: $b-black2;
+    $borders-focus-color: $b-blue1;
+    
+    
+    $ico-color: gray;
+    $close-color: gray;
+    $weekend-color: $b-gray2;
+    $disabled-day-color: lightgray;
+    $day-hover-active: $b-blue1;
+    $cal-win-border:$cal-margin;
+    $days-border: gray;
+
+    display: inline-block;
+    position: relative;
+
+    .calendar-cont {
+        position: relative;
+        display: inline-block;
+
+        cursor: pointer;
+    
+        text-align: center;
+    
+        .move-month {
+            display: inline-block;
+    
+            font-size: 1.2em;
+    
+            color: $arrow-color;
+    
+            cursor: pointer;
+    
+            &:hover {
+                color: $arrow-hover-color;
+            }
+        }
+
+        .value-cont {
+            position: relative;
+            
+            background-color: white;
+            
+            padding-left: 1.7em;
+            padding-right: 5px;
+        
+            line-height: 2;
+        
+            .ico {
+                @include centerer-vertical;
+                left: 4px;
+        
+                display: inline-block;
+                line-height: 0.8;
+                font-size: 1.2em;
+            }
+
+            .calendar-input {
+                display: inline-block;
+
+                cursor: pointer;
+        
+                border: 0;
+                border-radius: 0;
+        
+                width: 140px;
+                padding-left: 2em;
+        
+                background-color: $input-bck;
+                color: $input-color;    
+            }
+        
+        }
+    
+    }
+
+    .my-calendar-win {
+        position: absolute;
+        left: 0;
+        top: 2.2em;
+
+        min-width: 240px;
+
+        background-color: white;
+
+        z-index: 99999999;
+
+        border: 1px solid $cal-win-border;
+
+        display: inline-block;
+        padding: 8px;
+
+        text-align: center;
+
+
+        @include box-shadow2;
+
+        .months {
+            display: table;
+
+            width: 100%;
+
+            font-weight: bold;
+
+            .l-arr {
+                display: table-cell;
+            }
+
+            .date-txt {
+                display: table-cell;
+            }
+
+            .r-arr {
+                display: table-cell;
+            }
+        }
+
+        .day {
+            width: 35px;
+            line-height: 2.5;
+        }
+
+        .days-title {
+            display: table;
+            font-weight: bold;
+
+            margin-top: 12px;
+            margin-bottom: 8px;
+
+            padding-bottom: 8px;
+
+            border-bottom: 1px solid $days-border;
+
+            .day {
+                display: table-cell;
+            }
+
+            .weekend {
+                color: $weekend-color;
+            }
+        }
+
+        .week-row {
+            display: table;
+
+            margin-bottom: 8px;
+
+            .day {
+                display: table-cell;
+
+                &.weekend {
+                    color: $weekend-color;
+                }
+
+                &.disabled-day {
+                    color: $disabled-day-color;
+                }
+
+                &.active {
+                    background-color: $day-hover-active;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+
+            .selectable:hover {
+                color: white;
+                background-color: $day-hover-active;
+                cursor: pointer;
+            }
+        }
+
+        .top-bar {
+
+            text-align: right;
+            padding-right: 0.5em;
+
+            .close-cal {
+                display: inline-block;
+                cursor: pointer;
+                color: $close-color;
+                font-size: 1.2em;
+
+                &:hover {
+                    color: $b-red1;
+                }
+            }
+        }
+    }
+
+    .form-focusable {
+        border: 1px solid $cal-margin;
+
+        &:focus {
+            outline: none;
+            border: 1px solid $borders-focus-color;
+        }
+    }
+}
+
+

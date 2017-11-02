@@ -1,0 +1,36 @@
+<div #component class="modal-dialog-all">
+
+    <div class="ctable">
+        <div class="ccenter">
+
+            <div class="mwin-all" [style.max-width.px]="maxWidth" [style.min-width.px]="minWidth">
+                <div class="mwin-header">{{title}}
+                    <span class="close icon-times" (click)="close()"></span>
+                </div>
+                <div class="mwin-cont">
+
+                    <div #contPlaceholder></div>
+
+
+                </div>
+                <div #buttonsCont class="mwin-buttons">
+                        <form-button *ngFor="let btn of buttonsManager.buttons | async" 
+                            cls="focus-blue" 
+                            (onButtonClicked)="btn.callback ? btn.callback() : false" 
+                            [form]="btn.form" 
+                            [text]="btn.text" 
+                            [name]="btn.name" 
+                            [formTabIndex]="btn.tabIndex"
+                            [ngClass]="{'hidden': !btn.visible}"
+                    
+                        ></form-button>
+
+                        
+                        
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

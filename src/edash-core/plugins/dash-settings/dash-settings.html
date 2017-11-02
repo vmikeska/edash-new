@@ -1,0 +1,84 @@
+<div class="settings">
+
+    <tabs [items]="tabs"></tabs>
+
+    <div class="hsSound tabs-content">
+
+
+        <div class="menu-content-with-header">
+
+            <div class="mheader">
+                SOUND SETTING
+            </div>
+
+            <div class="mcont">
+
+                <switch [active]="soundActive" (valueChanged)="volumeOnOffChanged($event)"></switch>
+
+                <div class="value-wrap">
+                    <value-slider *ngIf="soundActive" [defaultValue]="defaultVolume" (onChange)="volumeChanged($event)" [stepPx]="20" [stepsCount]="8"></value-slider>                    
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="hsUserData tabs-content">
+
+
+        <div class="menu-content-with-header">
+
+            <div class="mheader">
+                USER DATA SETTING
+            </div>
+
+            <div class="mcont">
+
+                <div class="line-input-wrap-small">
+                    <input type="text" placeholder="email" />
+                </div>
+
+                <div class="line-input-wrap-small">
+                    <input type="text" placeholder="mobile number" />
+                </div>
+
+                <div class="line-input-wrap-small">
+                    <span class="lbtn focus-blue">Confirm change</span>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <div class="hsPassword tabs-content">
+        <div class="menu-content-with-header">
+
+            <div class="mheader">
+                PASSWORD CHANGE
+            </div>
+
+            <div class="mcont">
+
+                <div class="line-input-wrap-big">
+                    <input id="oldPass" type="password" placeholder="Old password" />
+                </div>
+
+                <div class="line-input-wrap-small">
+                    <input id="newPass" type="password" placeholder="New password" />
+                </div>
+
+                <div class="line-input-wrap-small">
+                    <input id="oldPassAgain" type="password" placeholder="New password again" />
+                </div>
+
+                <div class="line-input-wrap-small">
+                    <span class="lbtn focus-blue">Confirm change</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

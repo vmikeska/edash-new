@@ -1,0 +1,27 @@
+<div class="list-button" [style.height.px]="totalHeight">
+
+  <div *ngFor="let i of items" class="item" [style.lineHeight]="lineHeight">
+
+    <div class="btbl">
+
+      <div class="txt-cont">
+        <input *ngIf="i.editing" [(ngModel)]="i.text" type="text" (keydown)="editKeyDown($event, i)" />
+        <span *ngIf="!i.editing" class="txt" [ngClass]="{'clickable': clickable}" (click)="itemClick('link', i)">{{i.text}}</span>
+        <span *ngIf="editable && !i.editing" title="edit" class="edit-btn icon-pencil" (click)="editTxt(i)"></span>
+        <span *ngIf="editable && i.editing" title="save" class="edit-save-btn icon-check" (click)="saveTxt(i)"></span>
+        <span *ngIf="editable && i.editing" title="cancel" class="edit-cancel-btn icon-times" (click)="cancelTxt(i)"></span>
+      </div>
+
+      <div *ngIf="!i.editing" class="btns">
+
+        <span *ngFor="let b of buttons" class="btn" (click)="itemClick(b.action, i)">
+            <span class="ico" [ngClass]="b.ico" title="{{b.caption}}"></span>
+        </span>
+        
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

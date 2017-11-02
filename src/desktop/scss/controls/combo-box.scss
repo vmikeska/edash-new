@@ -1,0 +1,77 @@
+@import "../main";
+
+.combo-box {
+
+    text-align: left;
+    position: relative;
+
+    .box {        
+        padding-left: 0.5em;
+        cursor: pointer;
+        padding-right: 1.5em;
+
+        background-color: white;
+
+        .open-close {
+            position: absolute;
+            top: 0;
+            right: 5px;
+
+            color: $standard-font-color;
+
+            &:before {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            &:hover {
+                color: $standard-hover;
+            }
+        }
+    }
+
+    .drop {
+        position: absolute;
+        top: 2em;
+        left: 0;
+        background-color: white;
+
+        border: 1px solid $controls-border-color;
+        z-index: 90;
+
+        overflow-y: auto;
+
+        .item {
+            color: $standard-font-color;
+            background-color: $controls-bck;
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+
+            cursor: pointer;
+
+            &:hover {
+                background-color: $standard-rect-hover-bck;
+                color: $standard-rect-hover-color;
+            }
+
+            &.selected {
+                background-color: $standard-rect-selected-bck;
+                color: $standard-rect-selected-color;
+            }
+    
+            &.active {
+                background-color: $standard-rect-hover-bck;
+                color: $standard-rect-hover-color;
+            }
+        }
+    }
+
+    .form-focusable {
+        border: 1px solid $controls-border-color;
+
+        &:focus {
+            outline: none;
+            border: 1px solid $standard-focus;            
+        }
+    }
+}

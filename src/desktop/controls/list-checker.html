@@ -1,0 +1,19 @@
+<div #focusable class="list-checker form-focusable" [style.height.px]="totalHeight" tabindex="{{tabindex}}">
+
+    <div *ngFor="let i of items" class="item" [style.lineHeight]="lineHeight" (click)="itemClicked(i)" [ngClass]="getCurrentItemClass(i)">
+
+        <div class="btbl">
+
+            <div class="left">
+                <span [ngClass]="getSelectedClass(i)" class="select-btn icon-check-square"></span>                
+            </div>
+
+            <div class="right">                
+                <span class="txt" [style.lineHeight]="lineHeight">{{i.text}}</span>                
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

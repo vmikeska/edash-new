@@ -1,0 +1,80 @@
+
+$header-bck: $b-black2;
+$body-bck: $b-white1;
+
+$cross-hover: $b-red1;
+
+
+.modal-dialog-all {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    @include noselect;
+
+    background-color: rgba(black, 0.5);
+
+    z-index: 99999;
+
+    .ctable {
+        display: table;
+        width: 100%;
+        height: 100%;
+
+        .ccenter {            
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+    }
+
+    .mwin-all {
+        display: inline-block;
+
+        background-color: $body-bck;
+        
+        .mwin-header {
+            position: relative;
+            color: white;            
+            font-size: 1.1em;
+            background-color: $header-bck;
+            padding: 0.7em;
+            text-align: left;
+
+            .close {
+                position: absolute;
+                line-height: 3.2em;
+                top:0;
+                right: 0.7em;
+                color: white;
+
+                cursor: pointer;
+
+                &:hover {
+                    color: $cross-hover;
+                }
+            }
+        }
+
+        .mwin-cont {
+            
+        }
+
+        .mwin-buttons {
+            .form-button {
+                margin: 0.5em;
+            }
+        }
+    }
+}
+
+.confirm-dlg {
+    padding: 1em;
+}
+
+//todo: used ?
+.temp-cont {
+    height: 400px;
+}

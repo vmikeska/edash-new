@@ -1,0 +1,58 @@
+
+.form-horizontal {
+    display: table;
+    width: 100%;
+
+    &.col1 {
+        .form-item {
+            width: 100%;
+        }
+    }
+
+    &.col2 {
+        .form-item {
+            width: 50%;
+        }
+    }
+
+    &.col3 {
+        .form-item {
+            width: 33.3%;
+        }
+    }
+
+    &.col4 {
+        .form-item {
+            width: 25%;
+        }
+    }
+
+    &.col5 {
+        .form-item {
+            width: 20%;
+        }
+    }
+
+    
+    &.v-borders {
+        .form-item {
+            $border: 10px solid transparent;
+            
+            border-right: $border;
+
+            &:last-of-type {
+                border-right: 0;
+            }
+        }
+    }
+}
+
+.form-item {
+    display: table-cell;     
+}
+
+.control-title {
+    font-weight: bold;
+
+    padding: 0.3em;
+}

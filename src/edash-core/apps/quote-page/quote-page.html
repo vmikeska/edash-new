@@ -1,0 +1,43 @@
+<div class="quote-page">
+
+  <div class="size-fixed" data-height="40">
+    <tabs-menu [items]="tabs" [content]="tabsCont"></tabs-menu>
+
+    <div #tabsCont class="tabs-menu-content-cont">
+      <div class="tabs-menu-content  hsFilterNew">
+        <instrument-selection #instrumentsSelector [mainForm]="formsManager.defaultForm" (onSelectionChange)="instrumentSelectionChange($event)"></instrument-selection>
+      </div>
+
+      <div class="tabs-menu-content  tab-config hsConfig">
+
+        <quote-page-config [qp]="this"></quote-page-config>
+
+      </div>
+
+      <div class="tabs-menu-content  hsUnits">
+        <div>Preise in €/MWh</div>
+        <div>Mengen in MWh</div>
+        <div>Leistung in MW</div>
+      </div>
+
+      <div class="tabs-menu-content  hsTest">
+        <span class="lbtn focus-green" (click)="flashTestStart()">Flash test start</span>
+        <span class="lbtn focus-green" (click)="flashTestEnd()">Flash test end</span>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+  <div class="size-dynamic table-parent-cont" data-height="1">
+    <data-table #table emptyText="no instruments selected" [observableData]="observableData" (onCellDoubleClick)="tableDoubleClick($event)" (onHeaderClicked)="onTableHeaderClicked($event)"
+      columnsFilter="true" [headers]="headers" [serviceMenuActions]="customActions" (onActionMenuClick)="instrumentActionClick($event)"
+      (onAfterViewChanged)="onTableViewChanged()" cellsClass="h-center" headerClass="font-normal h-center" [parent]="this"></data-table>
+
+  </div>
+
+
+
+</div>

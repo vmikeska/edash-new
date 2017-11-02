@@ -1,0 +1,14 @@
+<data-table #table 
+        [headers]="headers" 
+        [observableData]="observableData" 
+        cellsClass="h-center"
+        headerClass="font-normal h-center"
+        [parent]="parent"        
+        actionColClass="h-right"
+
+        serviceMenuTitle=""
+        [serviceMenuActions]="customActions"
+        (onActionMenuClick)="orderActionClick($event)"
+                        
+            
+    ></data-table> 

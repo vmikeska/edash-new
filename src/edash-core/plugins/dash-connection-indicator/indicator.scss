@@ -1,0 +1,37 @@
+
+$size: 1em;
+
+.ls-indicator {
+    
+    text-align: center;
+
+    padding: 1em;
+
+    .led {
+        display: inline-block;
+
+        width: $size;
+        height: $size;        
+
+        border-radius: 50%;
+
+        &.green {
+            background-color: green;
+        }
+
+        &.yellow {
+            background-color: yellow;
+        }
+
+        &.red {
+            background-color: red;
+        }
+    }
+}
+
+.mobile-resp {
+    .ls-indicator {
+        display: inline-block;
+        vertical-align: top;
+    }
+ }

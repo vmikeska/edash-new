@@ -1,0 +1,22 @@
+
+
+<div class="menu-content-with-header">
+
+    <div class="mheader">
+        LAYOUTS
+    </div>
+
+    <div class="mcont">
+
+        <list-button 
+            mapping="name,id" 
+            clickable="true" 
+            [data]="list" 
+            [buttons]="lstButtons" 
+            [linesCount]="10" 
+            (buttonClicked)="buttonClicked($event)"
+            
+            ></list-button>
+        
+    </div>
+</div>

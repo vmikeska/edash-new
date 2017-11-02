@@ -1,0 +1,60 @@
+
+
+.sell-form {
+
+    .block {
+        .title {
+            font-weight: bold;
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+
+        .row {
+            display: table;
+            width: 100%;
+
+            margin-bottom: 1em;
+
+            .l,
+            .r {
+                width: 50%;
+                display: table-cell;
+                text-align: center;
+            }
+        }
+    }
+
+    .flash-cont {
+        position: relative;
+        display: inline-block;
+        padding-left: 1em;
+        padding-right: 1em;
+
+        .cell-flash {
+            background-color: $b-red1;
+
+            animation-name: opacity-animation;
+            animation-duration: 700ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+
+
+    .blue {
+        color: $b-blue6;
+        font-weight: bold;
+    }
+
+    .red {
+        color: $b-red1;
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,19 @@
+@import "../main";
+
+.form-button {
+    display: inline-block;
+
+    &.form-focusable {
+        border: 1px solid transparent;
+
+        &:focus {
+            outline: none;
+            border: 1px solid $standard-focus;
+        }
+    }
+
+    &.no-focus {
+        border: 0 !important;        
+    }
+
+}
